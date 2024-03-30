@@ -1,0 +1,22 @@
+﻿@model Dictionary<string, List<Series>>
+
+@foreach (var s in Model)
+{
+    <h3>@s.Key</h3>
+    <table class="customtable">
+        <tbody>
+            <tr>
+                <th class="oldname">Rági fájlnév</th>
+                <th class="newname">Új fájlnév</th>
+            </tr>
+            @foreach (var ser in s.Value)
+            {
+                <tr>
+                    <td class="oldname">@ser.OldName</td>
+                    <td class="newname">@ser.NewName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+}

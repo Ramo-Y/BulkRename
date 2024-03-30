@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Series";
+}
+
+@model Dictionary<string, List<Series>>
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Sorozatok</title>
+    <link href="~/css/customStyles.css" rel="stylesheet"/>
+</head>
+
+<h1>Sikeresen átnevezett fájlok</h1>
+
+@Html.DisplayFor(model => model, "SeriesTable")

@@ -1,0 +1,25 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Hiba.</h1>
+<h2 class="text-danger">Hiba történt a kérése feldolgozása során.</h2>
+
+@if (Model?.ShowRequestId ?? false)
+{
+    <p>
+        <strong>Kérés ID:</strong> <code>@Model?.RequestId</code>
+    </p>
+}
+
+<h3>Fejlesztői mód</h3>
+<p>
+    A <strong>Fejlesztői</strong> környezetre váltás részletesebb információkat jelenít meg a bekövetkezett hibáról.
+</p>
+<p>
+    <strong>A fejlesztői környezetet nem szabad engedélyezni a telepített alkalmazásokhoz.</strong>
+    Ez a kivételekből származó érzékeny információk megjelenítését eredményezheti a végfelhasználók számára.
+    A helyi hibakereséshez engedélyezze a következő <strong>Fejlesztői</strong> környezetet: <strong>ASPNETCORE_ENVIRONMENT</strong> környezeti változók között a <strong>Fejlesztői</strong>
+    beállításokban, és indítsa újra az alkalmazást.
+</p>
