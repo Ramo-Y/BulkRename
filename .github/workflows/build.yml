@@ -1,0 +1,40 @@
+on:
+  workflow_call:
+    inputs:
+      image_version:
+        type: string
+        required: true
+    outputs:
+      image_version:
+        value: ${{ inputs.image_version }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+      working-directory: src
+    - name: Build
+      run: dotnet build --no-restore
+      working-directory: src
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+    - name: Docker build and push
+      uses: docker/build-push-action@v5
+      with:
+        context: ./src
+        file: ./src/Dockerfile
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ vars.IMAGE_NAME }}:${{ inputs.image_version }}
+        outputs: type=docker,dest=/tmp/${{ vars.IMAGE_NAME }}.tar
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ vars.IMAGE_NAME }}
+        path: /tmp/${{ vars.IMAGE_NAME }}.tar

@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  set-version:
+    uses: ./.github/workflows/set_version.yml
+    secrets: inherit
+  build:
+    needs: set-version
+    uses: ./.github/workflows/build.yml
+    secrets: inherit
+    with:
+      image_version: ${{ needs.set-version.outputs.image_version }}
+  test:
+    needs: build
+    uses: ./.github/workflows/test.yml
+    secrets: inherit
+    with:
+      image_version: ${{ needs.build.outputs.image_version }}

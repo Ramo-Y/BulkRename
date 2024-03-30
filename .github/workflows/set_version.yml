@@ -1,0 +1,48 @@
+on:
+  workflow_call:
+    outputs:
+      image_version:
+        value: ${{ jobs.set_version.outputs.image_version }}
+
+jobs:
+  set_version:
+    outputs:
+      image_version: ${{ steps.set-version.outputs.image_version }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Set Version
+      id: set-version
+      run: |
+        if [[ "${{ github.ref }}" == refs/heads/master ]]; then
+          echo "image_version=latest" >> $GITHUB_OUTPUT
+
+        elif  [[ "${{ github.ref }}" == refs/heads/develop ]]; then
+          echo "image_version=latest-develop" >> $GITHUB_OUTPUT
+
+        elif [[ "${{ github.ref }}" == refs/heads/release/* ]]; then
+          str="${{ github.ref }}"
+          str=${str:19}
+          echo "image_version=$str" >> $GITHUB_OUTPUT
+
+        elif [[ "${{ github.ref }}" == refs/heads/feature/* ]]; then
+          str="${{ github.ref }}"
+          str=${str:19}
+          echo "image_version=$str" >> $GITHUB_OUTPUT
+
+        elif [[ "${{ github.ref }}" == refs/heads/bugfix/* ]]; then
+          str="${{ github.ref }}"
+          str=${str:18}
+          echo "image_version=$str" >> $GITHUB_OUTPUT
+  
+        elif [[ "${{ github.ref }}" == refs/heads/experimental/* ]]; then
+          str="${{ github.ref }}"
+          str=${str:24}
+          echo "image_version=$str" >> $GITHUB_OUTPUT
+
+        else
+          echo "image_version=latest" >> $GITHUB_OUTPUT        
+        fi
+    - name: Show image version
+      run: echo "Image version is '${{ steps.set-version.outputs.image_version }}'"

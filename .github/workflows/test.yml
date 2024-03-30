@@ -1,0 +1,49 @@
+on:
+  workflow_call:
+    inputs:
+      image_version:
+        type: string
+        required: true
+    outputs:
+      image_version:
+        value: ${{ inputs.image_version }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Create temp directories
+      run: |
+        mkdir ${{ runner.temp }}/BulkRename
+        mkdir ${{ runner.temp }}/BulkRename/Files
+        mkdir ${{ runner.temp }}/BulkRename/Logs
+        mkdir ${{ runner.temp }}/BulkRename/RenamingHistory
+    - name: Create Env
+      shell: pwsh
+      run: ./CreateEnvFile.ps1 -PersistanceMode "Database" -SqlServerSaPassword ${{ secrets.SQL_SERVER_SA_PASSWORD }} -BulkRenameFolder "${{ runner.temp }}/BulkRename/Files" -HistoryFolder "${{ runner.temp }}/BulkRename/RenamingHistory" -LogFolder "${{ runner.temp }}/BulkRename/Logs" -Version ${{ inputs.image_version }}
+      working-directory: src
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: ${{ vars.IMAGE_NAME }}
+        path: /tmp
+    - name: Load Docker image
+      run: |
+        docker load --input /tmp/${{ vars.IMAGE_NAME }}.tar
+        docker image ls -a
+    - name: Docker Cmpose
+      shell: pwsh
+      run: docker compose up -d --wait --wait-timeout 60
+      working-directory: src
+    - name: Integration Tests
+      run: dotnet test src/**/*.IntegrationTests.csproj
+    - name: Upload logs on fail
+      if: ${{ failure() }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: Build failure logs
+        path: ${{ runner.temp }}/BulkRename/Logs

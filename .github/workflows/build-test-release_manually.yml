@@ -1,0 +1,27 @@
+name: manual_release
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_version:
+        type: string
+        required: true
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    secrets: inherit
+    with:
+      image_version: ${{ inputs.image_version }}
+  test:
+    needs: build
+    uses: ./.github/workflows/test.yml
+    secrets: inherit
+    with:
+      image_version: ${{ inputs.image_version }}
+  release:
+    needs: test
+    uses: ./.github/workflows/release.yml
+    secrets: inherit
+    with:
+      image_version: ${{ inputs.image_version }}
