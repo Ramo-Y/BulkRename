@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Series";
+}
+
+@model Dictionary<string, List<Series>>
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Series</title>
+    <link href="~/css/customStyles.css" rel="stylesheet"/>
+</head>
+
+<div class="text-start">
+    <a class="btn btn-success" href="@Url.Action("Rename")">Submit Renaming</a>
+</div>
+
+<br/>
+
+@Html.DisplayFor(model => model, "SeriesTable")

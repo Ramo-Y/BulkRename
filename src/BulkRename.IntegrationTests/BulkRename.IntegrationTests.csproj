@@ -1,0 +1,135 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageReference Include="NUnit" Version="4.1.0" />
+    <PackageReference Include="NUnit.Analyzers" Version="4.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="NUnit.Framework" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="TestResources\.%40__thumb\.gitkeep">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\Dark\Season 01\Dark.S1.E01.German.DL.AAC.1080p.WebDL.x264.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\Dark\Season 01\Dark.S1.E02.German.DL.AAC.1080p.WebDL.x264.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\Dark\Season 01\Dark.S1.E03.German.DL.AAC.1080p.WebDL.x264.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\Dark\Season 01\Dark.S1.E04.German.DL.AAC.1080p.WebDL.x264.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\Dark\Season 01\Dark.S1.E05.German.DL.AAC.1080p.WebDL.x264.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\Dark\Season 01\Dark.S1.E06.German.DL.AAC.1080p.WebDL.x264.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\Dark\Season 01\Dark.S1.E07.German.DL.AAC.1080p.WebDL.x264.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\Dark\Season 01\Dark.S1.E08.German.DL.AAC.1080p.WebDL.x264.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\Dark\Season 01\Dark.S1.E09.German.DL.AAC.1080p.WebDL.x264.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\Dark\Season 01\Dark.S1.E10.German.DL.AAC.1080p.WebDL.x264.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\Dark\Season 01\ReadMe.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 01\rark-grames.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 01\ReadMe.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 01\twd.s1e01.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 01\twd.s1e02.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 01\twd.s1e03.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 01\twd.s1e04.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 01\twd.s1e05.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 01\twd.s1e06.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 01\twd.s1e07.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 01\twd.s1e08.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 01\twd.s1e09.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 01\twd.s1e10.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 01\twd.s1e01.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 02\twd.s2e01.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 02\twd.s2e02.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 02\twd.s2e03.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 02\twd.s2e04.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 02\twd.s2e05.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 02\twd.s2e06.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 02\twd.s2e07.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 02\twd.s2e08.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 02\twd.s2e09.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestResources\The Walking Dead\Season 02\twd.s2e10.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  
+</Project>

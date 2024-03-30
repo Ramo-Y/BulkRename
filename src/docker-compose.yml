@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+  mssqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: "mssqlserver"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "${SQL_SERVER_SA_PASSWORD}"
+      MSSQL_PID: Express
+      TZ: "Europe/Zurich"
+    ports:
+      - "${SQL_SERVER_EXTERNAL_PORT}:1433"
+  bulkrename:
+    depends_on:
+      - "mssqlserver"
+    image: ${DOCKER_REGISTRY}bulkrename:${VERSION}
+    container_name: "bulkrename"
+    environment:
+      ASPNETCORE_URLS: http://*:8080
+      PersistanceMode: "${PERSITANCE_MODE}"
+      DbServer: "mssqlserver"
+      DbName: "${DB_NAME}"
+      DbPort: "1433"
+      DbUser: "${DB_USER}"
+      DbPassword: "${SQL_SERVER_SA_PASSWORD}"
+      DbConnectionTimeOutInSeconds: "60"
+      SupportedFileEndings: "${SUPPORTED_FILE_ENDINGS}"
+      FoldersToIgnore: "${FOLDERS_TO_IGNORE}"
+      SeqUrl: "${SEQ_URL}"
+      SeqApiKey: "${SEQ_API_KEY}"
+      TZ: "Europe/Zurich"
+    ports:
+      - "${BULK_RENAME_PORT}:8080"
+    volumes:
+      - "${BULK_RENAME_FOLDER}://app//Files//"
+      - "${LOG_FOLDER}://app//Logs//"
+      - "${HISTORY_FOLDER}://app//RenamingHistory//"
+    healthcheck:
+      test: wget -qO - http://localhost:8080/healthz/ || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s

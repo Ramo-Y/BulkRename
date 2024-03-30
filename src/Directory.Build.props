@@ -1,0 +1,34 @@
+<Project>
+  <PropertyGroup>
+    <VersionPrefix>1.0.0</VersionPrefix>
+
+    <Authors>Ramazan Yilmaz</Authors>
+    <Copyright>Copyright © Ramazan Yilmaz, $([System.DateTime]::Now.ToString(yyyy))</Copyright>
+    
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <Description></Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Company />
+
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/Ramo-Y/BulkRename</RepositoryUrl>
+
+    <LangVersion>latest</LangVersion>
+
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+</Project>
