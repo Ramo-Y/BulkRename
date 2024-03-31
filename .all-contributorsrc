@@ -1,4 +1,7 @@
 {
-  "projectName": "BulkRename",
-  "projectOwner": "Ramo-Y"
+  "projectName": "RAY.BulkRename",
+  "projectOwner": "Ramo-Y",
+  "files": [
+    "README.md"
+  ]
 }
