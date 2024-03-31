@@ -7,7 +7,7 @@
 [![Activity](https://img.shields.io/github/commit-activity/m/Ramo-Y/BulkRename)](https://github.com/Ramo-Y/BulkRename/pulse)
 ![ci](https://img.shields.io/github/actions/workflow/status/Ramo-Y/BulkRename/build-test.yml?label=ci)
 ![release](https://img.shields.io/github/actions/workflow/status/Ramo-Y/BulkRename/build-test-release.yml?label=release)
-[![GitHub contributors](https://img.shields.io/github/all-contributors/Ramo-Y/BulkRename)](#Contributors)
+[![GitHub contributors](https://img.shields.io/github/all-contributors/Ramo-Y/BulkRename)](#contributors-)
 ![GitHub Sponsors](https://img.shields.io/github/sponsors/Ramo-Y)
 ![GitHub Downloads](https://img.shields.io/github/downloads/Ramo-Y/BulkRename/total)
 ![Open Issues](https://img.shields.io/github/issues/Ramo-Y/BulkRename)
