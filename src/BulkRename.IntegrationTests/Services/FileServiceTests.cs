@@ -105,44 +105,44 @@
 
             var darkExpectedNames = new List<string>
                                         {
-                                            "Dark - S01-E01.mkv",
-                                            "Dark - S01-E02.mkv",
-                                            "Dark - S01-E03.mkv",
-                                            "Dark - S01-E04.mkv",
-                                            "Dark - S01-E05.mkv",
-                                            "Dark - S01-E06.mkv",
-                                            "Dark - S01-E07.mkv",
-                                            "Dark - S01-E08.mkv",
-                                            "Dark - S01-E09.mkv",
-                                            "Dark - S01-E10.mkv"
+                                            "Dark - S01E01.mkv",
+                                            "Dark - S01E02.mkv",
+                                            "Dark - S01E03.mkv",
+                                            "Dark - S01E04.mkv",
+                                            "Dark - S01E05.mkv",
+                                            "Dark - S01E06.mkv",
+                                            "Dark - S01E07.mkv",
+                                            "Dark - S01E08.mkv",
+                                            "Dark - S01E09.mkv",
+                                            "Dark - S01E10.mkv"
                                         };
 
             var theWalkingDeadSeason01ExpectedNames = new List<string>
                                                           {
-                                                              $"{THE_WALKING_DEAD} - S01-E01.mkv",
-                                                              $"{THE_WALKING_DEAD} - S01-E02.mkv",
-                                                              $"{THE_WALKING_DEAD} - S01-E03.mkv",
-                                                              $"{THE_WALKING_DEAD} - S01-E04.mkv",
-                                                              $"{THE_WALKING_DEAD} - S01-E05.mkv",
-                                                              $"{THE_WALKING_DEAD} - S01-E06.mkv",
-                                                              $"{THE_WALKING_DEAD} - S01-E07.mkv",
-                                                              $"{THE_WALKING_DEAD} - S01-E08.mkv",
-                                                              $"{THE_WALKING_DEAD} - S01-E09.mkv",
-                                                              $"{THE_WALKING_DEAD} - S01-E10.mkv"
+                                                              $"{THE_WALKING_DEAD} - S01E01.mkv",
+                                                              $"{THE_WALKING_DEAD} - S01E02.mkv",
+                                                              $"{THE_WALKING_DEAD} - S01E03.mkv",
+                                                              $"{THE_WALKING_DEAD} - S01E04.mkv",
+                                                              $"{THE_WALKING_DEAD} - S01E05.mkv",
+                                                              $"{THE_WALKING_DEAD} - S01E06.mkv",
+                                                              $"{THE_WALKING_DEAD} - S01E07.mkv",
+                                                              $"{THE_WALKING_DEAD} - S01E08.mkv",
+                                                              $"{THE_WALKING_DEAD} - S01E09.mkv",
+                                                              $"{THE_WALKING_DEAD} - S01E10.mkv"
                                                           };
 
             var theWalkingDeadSeason02ExpectedNames = new List<string>
                                                           {
-                                                              $"{THE_WALKING_DEAD} - S02-E01.mkv",
-                                                              $"{THE_WALKING_DEAD} - S02-E02.mkv",
-                                                              $"{THE_WALKING_DEAD} - S02-E03.mkv",
-                                                              $"{THE_WALKING_DEAD} - S02-E04.mkv",
-                                                              $"{THE_WALKING_DEAD} - S02-E05.mkv",
-                                                              $"{THE_WALKING_DEAD} - S02-E06.mkv",
-                                                              $"{THE_WALKING_DEAD} - S02-E07.mkv",
-                                                              $"{THE_WALKING_DEAD} - S02-E08.mkv",
-                                                              $"{THE_WALKING_DEAD} - S02-E09.mkv",
-                                                              $"{THE_WALKING_DEAD} - S02-E10.mkv"
+                                                              $"{THE_WALKING_DEAD} - S02E01.mkv",
+                                                              $"{THE_WALKING_DEAD} - S02E02.mkv",
+                                                              $"{THE_WALKING_DEAD} - S02E03.mkv",
+                                                              $"{THE_WALKING_DEAD} - S02E04.mkv",
+                                                              $"{THE_WALKING_DEAD} - S02E05.mkv",
+                                                              $"{THE_WALKING_DEAD} - S02E06.mkv",
+                                                              $"{THE_WALKING_DEAD} - S02E07.mkv",
+                                                              $"{THE_WALKING_DEAD} - S02E08.mkv",
+                                                              $"{THE_WALKING_DEAD} - S02E09.mkv",
+                                                              $"{THE_WALKING_DEAD} - S02E10.mkv"
                                                           };
 
             // act

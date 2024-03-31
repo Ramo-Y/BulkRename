@@ -6,6 +6,6 @@
 
         internal const string NAME_FIRST_PRAEFIX = " - S";
 
-        internal const string NAME_SECOND_PRAEFIX = "-E";
+        internal const string NAME_SECOND_PRAEFIX = "E";
     }
 }
