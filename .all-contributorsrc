@@ -1,7 +1,21 @@
 {
-  "projectName": "RAY.BulkRename",
+  "projectName": "BulkRename",
   "projectOwner": "Ramo-Y",
   "files": [
     "README.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "sszemtelen",
+      "name": "Roland.",
+      "avatar_url": "https://avatars.githubusercontent.com/u/114315281?v=4",
+      "profile": "https://github.com/sszemtelen",
+      "contributions": [
+        "translation"
+      ]
+    }
   ]
 }
