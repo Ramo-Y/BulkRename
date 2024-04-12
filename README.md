@@ -53,7 +53,6 @@ Please use the following `docker-compose.yml` file and replace the values with y
 version: '3.7'
 services:
   bulkrename:
-    depends_on:
     image: ramoy/bulkrename:latest
     container_name: "bulkrename"
     environment:
