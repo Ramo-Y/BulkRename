@@ -188,6 +188,7 @@ Please read the [development documentation](./DEVELOPMENT.md) if you would like 
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/sszemtelen"><img src="https://avatars.githubusercontent.com/u/114315281?v=4?s=100" width="100px;" alt="Roland."/><br /><sub><b>Roland.</b></sub></a><br /><a href="#translation-sszemtelen" title="Translation">🌍</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Ramo-Y"><img src="https://avatars.githubusercontent.com/u/34425244?v=4?s=100" width="100px;" alt="Ramazan Yilmaz"/><br /><sub><b>Ramazan Yilmaz</b></sub></a><br /><a href="#code-Ramo-Y" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://allcontributors.org"><img src="https://avatars.githubusercontent.com/u/46410174?v=4?s=100" width="100px;" alt="All Contributors"/><br /><sub><b>All Contributors</b></sub></a><br /><a href="#doc-all-contributors" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
