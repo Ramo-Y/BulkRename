@@ -1,4 +1,8 @@
-﻿@{
+﻿@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<SharedResource> SharedLocalizer
+
+@{
     ViewData["Title"] = "Series";
 }
 
@@ -8,10 +12,10 @@
 
 <head>
     <meta charset="utf-8"/>
-    <title>Series</title>
+    <title>@SharedLocalizer["Series"]</title>
     <link href="~/css/customStyles.css" rel="stylesheet"/>
 </head>
 
-<h1>Successfully renamed files</h1>
+<h1>@SharedLocalizer["SuccessfullyRenamedFiles"]</h1>
 
 @Html.DisplayFor(model => model, "SeriesTable")

@@ -1,13 +1,17 @@
-﻿@{
+﻿@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<SharedResource> SharedLocalizer
+
+@{
     ViewData["Title"] = "Home";
 }
 
 <head>
-    <title>Home</title>
+    <title>@SharedLocalizer["Home"]</title>
     <meta charset="utf-8"/>
 </head>
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to BulkRename</h1>
-    <a class="btn btn-primary" href="Series">Preview Renaming of TV-Shows</a>
+    <h1 class="display-4">@SharedLocalizer["WelcomeToBulkRename"]</h1>
+    <a class="btn btn-primary" href="Series">@SharedLocalizer["PreviewRenamingOfTvShows"]</a>
 </div>

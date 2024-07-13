@@ -1,5 +1,8 @@
 using BulkRename;
+using Microsoft.AspNetCore.Localization;
 using Serilog;
+using System.Globalization;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog();
@@ -10,7 +13,36 @@ startup.ConfigureServices(builder.Services);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddLocalization(options =>
+{
+    options.ResourcesPath = "Resources";
+});
+const string defaultCulture = "en";
+
+var supportedCultures = new[]
+{
+    new CultureInfo(defaultCulture)
+};
+
+builder.Services.Configure<RequestLocalizationOptions>(options => {
+    options.DefaultRequestCulture = new RequestCulture(defaultCulture);
+    options.SupportedCultures = supportedCultures;
+    options.SupportedUICultures = supportedCultures;
+});
+
+builder.Services.AddRazorPages().AddDataAnnotationsLocalization(options =>
+{
+    options.DataAnnotationLocalizerProvider = (type, factory) =>
+    {
+        var assemblyName = new AssemblyName(typeof(SharedResource).GetTypeInfo().Assembly.FullName);
+
+        return factory.Create("SharedResource", assemblyName.Name);
+    };
+});
+
 var app = builder.Build();
+
+app.UseRequestLocalization();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

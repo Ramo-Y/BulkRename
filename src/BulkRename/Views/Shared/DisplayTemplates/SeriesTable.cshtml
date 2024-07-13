@@ -1,4 +1,8 @@
-﻿@model Dictionary<string, List<Series>>
+﻿@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<SharedResource> SharedLocalizer
+
+@model Dictionary<string, List<Series>>
 
 @foreach (var s in Model)
 {
@@ -6,8 +10,8 @@
     <table class="customtable">
         <tbody>
             <tr>
-                <th class="oldname">Old Name</th>
-                <th class="newname">New Name</th>
+                <th class="oldname">@SharedLocalizer["OldName"]</th>
+                <th class="newname">@SharedLocalizer["NewName"]</th>
             </tr>
             @foreach (var ser in s.Value)
             {
