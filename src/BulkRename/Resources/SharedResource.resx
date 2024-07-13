@@ -150,6 +150,9 @@ and restarting the app.</value>
   <data name="PreviewRenamingOfTvShows" xml:space="preserve">
     <value>Preview Renaming of TV-Shows</value>
   </data>
+  <data name="RenamedOn" xml:space="preserve">
+    <value>Renamed on</value>
+  </data>
   <data name="Series" xml:space="preserve">
     <value>Series</value>
   </data>

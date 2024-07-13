@@ -3,16 +3,20 @@
     using BulkRename.Interfaces;
     using BulkRename.Models;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Localization;
 
     public class HistoryController : Controller
     {
         private readonly IPersistanceService _persistanceService;
+        
+        private readonly IStringLocalizer<SharedResource> _sharedLocalizer;
 
         private static readonly Dictionary<string, List<Series>> _dictionary = [];
 
-        public HistoryController(IPersistanceService persistanceService)
+        public HistoryController(IPersistanceService persistanceService, IStringLocalizer<SharedResource> sharedLocalizer)
         {
             _persistanceService = persistanceService;
+            _sharedLocalizer = sharedLocalizer;
         }
 
         public IActionResult Index()
@@ -22,6 +26,7 @@
 
         public async Task<IActionResult> LoadHistory()
         {
+            var renamedOn = _sharedLocalizer["RenamedOn"];
             _dictionary.Clear();
 
             var renamingSessionToEpisodes = await _persistanceService.LoadRenamingHistory();
@@ -47,7 +52,7 @@
                         });
                 }
 
-                var key = $"{renamingSessionToEpisode.RenamingSession.RenName}, Renamed on: {renamingSessionToEpisode.RenamingSession.RenExecutingDateTime:yyyy-MM-dd HH:mm:ss}";
+                var key = $"{renamingSessionToEpisode.RenamingSession.RenName}, {renamedOn}: {renamingSessionToEpisode.RenamingSession.RenExecutingDateTime:yyyy-MM-dd HH:mm:ss}";
                 _dictionary.Add(key, series);
             }
 
