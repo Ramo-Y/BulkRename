@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AnErrorOccuredHeader" xml:space="preserve">
+    <value>An error occurred while processing your request.</value>
+  </data>
+  <data name="DetailedErrorMessage" xml:space="preserve">
+    <value>&lt;strong&gt;The Development environment shouldn't be enabled for deployed applications.&lt;/strong&gt;
+It can result in displaying sensitive information from exceptions to end users.
+For local debugging, enable the &lt;strong&gt;Development&lt;/strong&gt; environment by setting the &lt;strong&gt;ASPNETCORE_ENVIRONMENT&lt;/strong&gt; environment variable to &lt;strong&gt;Development&lt;/strong&gt;
+and restarting the app.</value>
+  </data>
+  <data name="DevelopmentMode" xml:space="preserve">
+    <value>Development Mode</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="History" xml:space="preserve">
     <value>History</value>
   </data>
@@ -140,6 +155,9 @@
   </data>
   <data name="SuccessfullyRenamedFiles" xml:space="preserve">
     <value>Successfully renamed files</value>
+  </data>
+  <data name="SwappingToDevelopmentModeDisplay" xml:space="preserve">
+    <value>Swapping to &lt;strong&gt;Development&lt;/strong&gt; environment will display more detailed information about the error that occurred.</value>
   </data>
   <data name="WelcomeToBulkRename" xml:space="preserve">
     <value>Welcome to BulkRename</value>

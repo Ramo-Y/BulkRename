@@ -1,10 +1,17 @@
-﻿@model ErrorViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<SharedResource> SharedLocalizer
+@inject IHtmlLocalizer<SharedResource> SharedHtmlLocalizer
+
+@model ErrorViewModel
+
 @{
-    ViewData["Title"] = "Error";
+    ViewData["Title"] = SharedLocalizer["Error"];
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h1 class="text-danger">@SharedLocalizer["Error"].</h1>
+<h2 class="text-danger">@SharedLocalizer["AnErrorOccuredHeader"]</h2>
 
 @if (Model?.ShowRequestId ?? false)
 {
@@ -13,13 +20,10 @@
     </p>
 }
 
-<h3>Development Mode</h3>
+<h3>@SharedLocalizer["DevelopmentMode"]</h3>
 <p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+    @SharedHtmlLocalizer["SwappingToDevelopmentModeDisplay"]
 </p>
 <p>
-    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-    It can result in displaying sensitive information from exceptions to end users.
-    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-    and restarting the app.
+    @SharedHtmlLocalizer["DetailedErrorMessage"]
 </p>

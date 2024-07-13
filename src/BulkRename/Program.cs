@@ -1,5 +1,6 @@
 using BulkRename;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Serilog;
 using System.Globalization;
 using System.Reflection;
@@ -11,7 +12,8 @@ var startup = new Startup(builder.Configuration);
 startup.ConfigureServices(builder.Services);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
 
 builder.Services.AddLocalization(options =>
 {
