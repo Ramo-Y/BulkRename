@@ -23,8 +23,12 @@
         public const string PREVIEW_RENAMING_OF_TV_SHOWS = "PreviewRenamingOfTvShows";
         
         public const string RENAMED_ON = "RenamedOn";
+
+        public const string REQUEST = "Request";
         
         public const string SERIES = "Series";
+
+        public const string SUBMIT_RENAMING = "Submit Renaming";
         
         public const string SUCCESSFULLY_RENAMED_FILES = "SuccessfullyRenamedFiles";
         

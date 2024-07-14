@@ -153,8 +153,14 @@ and restarting the app.</value>
   <data name="RenamedOn" xml:space="preserve">
     <value>Renamed on</value>
   </data>
+  <data name="Request" xml:space="preserve">
+    <value>Request</value>
+  </data>
   <data name="Series" xml:space="preserve">
     <value>Series</value>
+  </data>
+  <data name="SubmitRenaming" xml:space="preserve">
+    <value>Submit Renaming</value>
   </data>
   <data name="SuccessfullyRenamedFiles" xml:space="preserve">
     <value>Successfully renamed files</value>
@@ -163,6 +169,6 @@ and restarting the app.</value>
     <value>Swapping to &lt;strong&gt;Development&lt;/strong&gt; environment will display more detailed information about the error that occurred.</value>
   </data>
   <data name="WelcomeToBulkRename" xml:space="preserve">
-    <value>Welcome to BulkRename</value>
+    <value>Welcome to BulkRename!</value>
   </data>
 </root>
