@@ -1,3 +1,22 @@
+- [Description](#description)
+- [Documentation](#documentation)
+- [Branches](#branches)
+- [Workflows](#workflows)
+  - [Variables and secrets](#variables-and-secrets)
+- [.env file](#env-file)
+- [Languages](#languages)
+  - [Resource file](#resource-file)
+    - [Integration Tests](#integration-tests)
+  - [Add language to the supported cultures](#add-language-to-the-supported-cultures)
+- [Version](#version)
+- [Database fields](#database-fields)
+    - [Primary key](#primary-key)
+    - [All fields](#all-fields)
+    - [Foreign Keys](#foreign-keys)
+- [Working locally](#working-locally)
+  - [Local build](#local-build)
+  - [Running the container](#running-the-container)
+
 # Description
 You are welcome to participate in the development of this tool, in this file some information and rules for the development are described.
 
@@ -31,6 +50,29 @@ In order for the workflows to run on your GitHub account, the following variable
 
 # .env file
 In order that parameter values are not directly in the docker-compose.yml, the .env file is used here. This allows the parameters and values to be specified as a key-value pair in this file. The [CreateEnvFile.ps1](./src/CreateEnvFile.ps1) script was created to avoid having to create the file manually. If new parameters are defined for the docker-compose.yml file, the script should be extended accordingly.
+
+# Languages
+A new language can be added very easily, you need Visual Studio, you can download it [here](https://visualstudio.microsoft.com/downloads/). In this example, we will add `Spanish` as a new language.
+
+## Resource file
+Create a new resource file in the folder [Resources](./src/BulkRename/Resources) and provide your language code between the file `SharedResource` name and the extension `resx`, for example `SharedResource.es.resx`. Copy all the keys from the [default language file](./src/BulkRename/Resources/SharedResource.resx) which is English, and add the translations. Check out this [Microsoft documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/localization/provide-resources?view=aspnetcore-8.0) to learn more about resource files.
+
+### Integration Tests
+There are a few integration tests, that will ensure that all the language keys, that exist in the English version, have also been translated to the new language. Please run [these tests](./src/BulkRename.IntegrationTests/Resources/LanguageResourcesTests.cs) before creating a pull request.
+
+## Add language to the supported cultures
+Go to the class [Program.cs](./src/BulkRename/Program.cs) and add your language to the `supportedCultures` with the corresponding culture.
+
+```c#
+var supportedCultures = new[]
+{
+    new CultureInfo(defaultCulture),
+    new CultureInfo("hu"),
+    new CultureInfo("de"),
+    // Add here your new CultureInfo
+    new CultureInfo("es")
+};
+```
 
 # Version
 The version is set in the following files:
