@@ -34,6 +34,7 @@
   - [Renamed series overview](#renamed-series-overview)
   - [History](#history)
 - [Development](#development)
+  - [Adding new languages](#adding-new-languages)
   - [Contributors ✨](#contributors-)
 
 
@@ -177,6 +178,9 @@ Call up the history page by pressing **History (8)**. The first time, the page w
 
 # Development
 Please read the [development documentation](./DEVELOPMENT.md) if you would like to participate in the development.
+
+## Adding new languages
+This app can provide multiple languages and includes already the languages `English`, `German`, and `Hungarian`. A new language can be added within a few steps, to do this, please check out the [documentation](./DEVELOPMENT.md#languages).
 
 ## Contributors ✨
 
