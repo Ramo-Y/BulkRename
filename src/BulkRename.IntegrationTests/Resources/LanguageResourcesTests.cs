@@ -19,7 +19,7 @@
 
         private List<string> GetLanguageResourceFiles()
         {
-            var files = Directory.GetFiles(@"..\..\..\..\BulkRename\Resources\", "*.resx").ToList();
+            var files = Directory.GetFiles(@"../../../../BulkRename/Resources/", "*.resx").ToList();
             return files;
         }
 
