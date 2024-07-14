@@ -24,7 +24,8 @@ const string defaultCulture = "en";
 var supportedCultures = new[]
 {
     new CultureInfo(defaultCulture),
-    new CultureInfo("hu")
+    new CultureInfo("hu"),
+    new CultureInfo("de")
 };
 
 builder.Services.Configure<RequestLocalizationOptions>(options => {
