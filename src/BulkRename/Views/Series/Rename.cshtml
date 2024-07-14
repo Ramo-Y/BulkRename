@@ -1,5 +1,10 @@
-﻿@{
-    ViewData["Title"] = "Series";
+﻿@using BulkRename.Constants
+@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<SharedResource> SharedLocalizer
+
+@{
+    ViewData["Title"] = @SharedLocalizer[LocalizationConstants.SERIES];
 }
 
 @model Dictionary<string, List<Series>>
@@ -8,10 +13,10 @@
 
 <head>
     <meta charset="utf-8"/>
-    <title>Series</title>
+    <title>@SharedLocalizer[LocalizationConstants.SERIES]</title>
     <link href="~/css/customStyles.css" rel="stylesheet"/>
 </head>
 
-<h1>Successfully renamed files</h1>
+<h1>@SharedLocalizer[LocalizationConstants.SUCCESSFULLY_RENAMED_FILES]</h1>
 
 @Html.DisplayFor(model => model, "SeriesTable")

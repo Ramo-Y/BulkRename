@@ -5,13 +5,13 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/ramoy/bulkrename.svg)](https://hub.docker.com/r/ramoy/bulkrename)
 [![MIT Licensed](https://img.shields.io/github/license/ramo-y/BulkRename.svg)](https://github.com/Ramo-Y/BulkRename/blob/master/LICENSE)
 [![Activity](https://img.shields.io/github/commit-activity/m/Ramo-Y/BulkRename)](https://github.com/Ramo-Y/BulkRename/pulse)
-![ci](https://img.shields.io/github/actions/workflow/status/Ramo-Y/BulkRename/build-test.yml?label=ci)
-![release](https://img.shields.io/github/actions/workflow/status/Ramo-Y/BulkRename/build-test-release.yml?label=release)
+[![ci](https://img.shields.io/github/actions/workflow/status/Ramo-Y/BulkRename/build-test.yml?label=ci)](https://github.com/Ramo-Y/BulkRename/actions/workflows/build-test.yml)
+[![release](https://img.shields.io/github/actions/workflow/status/Ramo-Y/BulkRename/build-test-release.yml?label=release)](https://github.com/Ramo-Y/BulkRename/actions/workflows/build-test-release.yml)
 [![GitHub contributors](https://img.shields.io/github/all-contributors/Ramo-Y/BulkRename)](#contributors-)
-![GitHub Sponsors](https://img.shields.io/github/sponsors/Ramo-Y)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/Ramo-Y)](https://github.com/sponsors/Ramo-Y)
 ![GitHub Downloads](https://img.shields.io/github/downloads/Ramo-Y/BulkRename/total)
-![Open Issues](https://img.shields.io/github/issues/Ramo-Y/BulkRename)
-![Closed Issues](https://img.shields.io/github/issues-closed/Ramo-Y/BulkRename)
+[![Open Issues](https://img.shields.io/github/issues/Ramo-Y/BulkRename)](https://github.com/Ramo-Y/BulkRename/issues)
+[![Closed Issues](https://img.shields.io/github/issues-closed/Ramo-Y/BulkRename)](https://github.com/Ramo-Y/BulkRename/issues?q=is%3Aissue+is%3Aclosed)
 
 </div>
 
@@ -34,6 +34,7 @@
   - [Renamed series overview](#renamed-series-overview)
   - [History](#history)
 - [Development](#development)
+  - [Adding new languages](#adding-new-languages)
   - [Contributors ✨](#contributors-)
 
 
@@ -177,6 +178,9 @@ Call up the history page by pressing **History (8)**. The first time, the page w
 
 # Development
 Please read the [development documentation](./DEVELOPMENT.md) if you would like to participate in the development.
+
+## Adding new languages
+This app can provide multiple languages and includes already the languages `English`, `German`, and `Hungarian`. A new language can be added within a few steps, to do this, please check out the [documentation](./DEVELOPMENT.md#languages).
 
 ## Contributors ✨
 

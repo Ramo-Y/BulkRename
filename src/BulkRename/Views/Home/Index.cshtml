@@ -1,13 +1,18 @@
-﻿@{
-    ViewData["Title"] = "Home";
+﻿@using BulkRename.Constants
+@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<SharedResource> SharedLocalizer
+
+@{
+    ViewData["Title"] = @SharedLocalizer[LocalizationConstants.HOME];
 }
 
 <head>
-    <title>Home</title>
+    <title>@SharedLocalizer[LocalizationConstants.HOME]</title>
     <meta charset="utf-8"/>
 </head>
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to BulkRename</h1>
-    <a class="btn btn-primary" href="Series">Preview Renaming of TV-Shows</a>
+    <h1 class="display-4">@SharedLocalizer[LocalizationConstants.WELCOME_TO_BULK_RENAME]</h1>
+    <a class="btn btn-primary" href="Series">@SharedLocalizer[LocalizationConstants.PREVIEW_RENAMING_OF_TV_SHOWS]</a>
 </div>
