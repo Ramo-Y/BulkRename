@@ -36,9 +36,9 @@ builder.Services.AddRazorPages().AddDataAnnotationsLocalization(options =>
 {
     options.DataAnnotationLocalizerProvider = (type, factory) =>
     {
-        var assemblyName = new AssemblyName(typeof(SharedResource).GetTypeInfo().Assembly.FullName);
+        var assemblyName = new AssemblyName(typeof(SharedResource)!.GetTypeInfo()!.Assembly!.FullName!);
 
-        return factory.Create("SharedResource", assemblyName.Name);
+        return factory.Create("SharedResource", assemblyName!.Name!);
     };
 });
 
