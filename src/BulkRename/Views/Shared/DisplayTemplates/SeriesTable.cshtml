@@ -1,4 +1,5 @@
-﻿@using Microsoft.Extensions.Localization
+﻿@using BulkRename.Constants
+@using Microsoft.Extensions.Localization
 
 @inject IStringLocalizer<SharedResource> SharedLocalizer
 
@@ -10,8 +11,8 @@
     <table class="customtable">
         <tbody>
             <tr>
-                <th class="oldname">@SharedLocalizer["OldName"]</th>
-                <th class="newname">@SharedLocalizer["NewName"]</th>
+                <th class="oldname">@SharedLocalizer[LocalizationConstants.OLD_NAME]</th>
+                <th class="newname">@SharedLocalizer[LocalizationConstants.NEW_NAME]</th>
             </tr>
             @foreach (var ser in s.Value)
             {

@@ -1,9 +1,10 @@
-﻿@using Microsoft.Extensions.Localization
+﻿@using BulkRename.Constants
+@using Microsoft.Extensions.Localization
 
 @inject IStringLocalizer<SharedResource> SharedLocalizer
 
 @{
-    ViewData["Title"] = @SharedLocalizer["Series"];
+    ViewData["Title"] = @SharedLocalizer[LocalizationConstants.SERIES];
 }
 
 @model Dictionary<string, List<Series>>
@@ -12,7 +13,7 @@
 
 <head>
     <meta charset="utf-8"/>
-    <title>@SharedLocalizer["Series"]</title>
+    <title>@SharedLocalizer[LocalizationConstants.SERIES]</title>
     <link href="~/css/customStyles.css" rel="stylesheet"/>
 </head>
 

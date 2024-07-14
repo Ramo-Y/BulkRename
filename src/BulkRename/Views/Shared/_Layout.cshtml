@@ -1,4 +1,5 @@
-﻿@using Microsoft.Extensions.Localization
+﻿@using BulkRename.Constants
+@using Microsoft.Extensions.Localization
 
 @inject IStringLocalizer<SharedResource> SharedLocalizer
 
@@ -25,13 +26,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@SharedLocalizer["Home"]</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@SharedLocalizer[LocalizationConstants.HOME]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Series" asp-action="Index">@SharedLocalizer["Series"]</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Series" asp-action="Index">@SharedLocalizer[LocalizationConstants.SERIES]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="History" asp-action="Index">@SharedLocalizer["History"]</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="History" asp-action="Index">@SharedLocalizer[LocalizationConstants.HISTORY]</a>
                         </li>
                     </ul>
                 </div>
@@ -46,7 +47,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - BulkRename - <a asp-area="" asp-controller="Home" asp-action="Index">@SharedLocalizer["Home"]</a>
+            &copy; 2024 - BulkRename - <a asp-area="" asp-controller="Home" asp-action="Index">@SharedLocalizer[LocalizationConstants.HOME]</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
