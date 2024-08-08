@@ -6,10 +6,9 @@
 [![MIT Licensed](https://img.shields.io/github/license/ramo-y/BulkRename.svg)](https://github.com/Ramo-Y/BulkRename/blob/master/LICENSE)
 [![Activity](https://img.shields.io/github/commit-activity/m/Ramo-Y/BulkRename)](https://github.com/Ramo-Y/BulkRename/pulse)
 [![ci](https://img.shields.io/github/actions/workflow/status/Ramo-Y/BulkRename/build-test.yml?label=ci)](https://github.com/Ramo-Y/BulkRename/actions/workflows/build-test.yml)
-[![release](https://img.shields.io/github/actions/workflow/status/Ramo-Y/BulkRename/build-test-release.yml?label=release)](https://github.com/Ramo-Y/BulkRename/actions/workflows/build-test-release.yml)
+[![release](https://img.shields.io/github/actions/workflow/status/Ramo-Y/BulkRename/build-test-release-cleanup.yml?label=release)](https://github.com/Ramo-Y/BulkRename/actions/workflows/build-test-release-cleanup.yml)
 [![GitHub contributors](https://img.shields.io/github/all-contributors/Ramo-Y/BulkRename)](#contributors-)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/Ramo-Y)](https://github.com/sponsors/Ramo-Y)
-![GitHub Downloads](https://img.shields.io/github/downloads/Ramo-Y/BulkRename/total)
 [![Open Issues](https://img.shields.io/github/issues/Ramo-Y/BulkRename)](https://github.com/Ramo-Y/BulkRename/issues)
 [![Closed Issues](https://img.shields.io/github/issues-closed/Ramo-Y/BulkRename)](https://github.com/Ramo-Y/BulkRename/issues?q=is%3Aissue+is%3Aclosed)
 

@@ -30,3 +30,9 @@ jobs:
     secrets: inherit
     with:
       image_version: ${{ needs.test.outputs.image_version }}
+  cleanup:
+    if: always()
+    needs: release
+    uses: ./.github/workflows/cleanup.yml
+    secrets: inherit
+  
