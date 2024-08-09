@@ -61,6 +61,12 @@
 
         public async Task Configure(WebApplication app)
         {
+            ConfigureLogger();
+            await PreparateDatabase(app);
+        }
+
+        private void ConfigureLogger()
+        {
             var seqUrl = Configuration[ConfigurationNameConstants.SEQ_URL];
 
             if (!string.IsNullOrEmpty(seqUrl))
@@ -78,11 +84,18 @@
                                 .WriteTo.File(path: logPath, rollingInterval: RollingInterval.Day)
                                 .WriteTo.Console().CreateLogger();
             }
+        }
 
-            var connectionTimeOut = GetConnectionTimeOut();
-            var preparationDatabase = app.Services.GetService<PreparationDatabase>();
-            var task = preparationDatabase!.PreparatePopulation(app, connectionTimeOut);
-            await task;
+        private async Task PreparateDatabase(WebApplication app)
+        {
+            var persistanceMode = Configuration.GetValue<PersistanceMode>(nameof(PersistanceMode));
+            if (persistanceMode == PersistanceMode.Database)
+            {
+                var connectionTimeOut = GetConnectionTimeOut();
+                var preparationDatabase = app.Services.GetService<PreparationDatabase>();
+                var task = preparationDatabase!.PreparatePopulation(app, connectionTimeOut);
+                await task;
+            }
         }
 
         private void SetConnectionString()
