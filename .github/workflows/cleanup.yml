@@ -1,0 +1,13 @@
+on:
+  workflow_call:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - uses: geekyeggo/delete-artifact@v5
+      with:
+          name: ${{ vars.IMAGE_NAME }}
+          failOnError: false
