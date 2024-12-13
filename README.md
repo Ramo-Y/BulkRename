@@ -61,7 +61,7 @@ services:
       FoldersToIgnore: ".@__thumb"
       TZ: "Europe/Zurich"
     ports:
-      - "8080:80"
+      - "8080:8080"
     volumes:
       - "/share/Downloads/Files://app//Files//" # folder in which your TV show files must be located at the time of renaming
       - "/share/Downloads/Logs://app//Logs//" # optional to have logs available outside docker
@@ -105,7 +105,7 @@ services:
       SeqApiKey: "YOUR_SECRET_API_KEY" # only required if SEQ is used
       TZ: "Europe/Zurich"
     ports:
-      - "8080:80"
+      - "8080:8080"
     volumes:
       - "/share/Downloads/Files://app//Files//" # folder in which your TV show files must be located at the time of renaming
 ```
