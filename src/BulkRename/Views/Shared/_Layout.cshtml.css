@@ -40,9 +40,16 @@ button.accept-policy {
 }
 
 .footer {
+  border-top: 1px solid #ccc;
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
