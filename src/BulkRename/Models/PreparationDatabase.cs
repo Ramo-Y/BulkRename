@@ -55,7 +55,8 @@
 
                 _logger.LogWarning("Database is propably not ready...");
                 _logger.LogWarning($"Connection failed, will try again. Max timeout = {_connectionTimeOut}ms");
-                Thread.Sleep(1000);
+
+                await Task.Delay(1000);
                 await TrySeedData(context);
             }
         }
