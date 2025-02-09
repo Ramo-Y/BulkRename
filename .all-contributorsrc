@@ -43,6 +43,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "qsig-a",
+      "name": "Andrew Bell",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26676295?v=4",
+      "profile": "https://github.com/qsig-a",
+      "contributions": [
+        "bug"
+      ]
     }
   ]
 }
