@@ -193,6 +193,7 @@ This app can provide multiple languages and includes already the languages `Engl
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Ramo-Y"><img src="https://avatars.githubusercontent.com/u/34425244?v=4?s=100" width="100px;" alt="Ramazan Yilmaz"/><br /><sub><b>Ramazan Yilmaz</b></sub></a><br /><a href="#code-Ramo-Y" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://allcontributors.org"><img src="https://avatars.githubusercontent.com/u/46410174?v=4?s=100" width="100px;" alt="All Contributors"/><br /><sub><b>All Contributors</b></sub></a><br /><a href="#doc-all-contributors" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/hetlelid"><img src="https://avatars.githubusercontent.com/u/279584?v=4?s=100" width="100px;" alt="hetlelid"/><br /><sub><b>hetlelid</b></sub></a><br /><a href="#doc-hetlelid" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/qsig-a"><img src="https://avatars.githubusercontent.com/u/26676295?v=4?s=100" width="100px;" alt="Andrew Bell"/><br /><sub><b>Andrew Bell</b></sub></a><br /><a href="#bug-qsig-a" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
 </table>
