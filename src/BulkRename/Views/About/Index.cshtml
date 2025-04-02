@@ -1,0 +1,19 @@
+﻿@using BulkRename.Constants
+@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<SharedResource> SharedLocalizer
+
+@{
+    ViewData["Title"] = @SharedLocalizer[LocalizationConstants.ABOUT];
+}
+
+<head>
+    <title>@SharedLocalizer[LocalizationConstants.ABOUT]</title>
+    <meta charset="utf-8"/>
+</head>
+
+<div class="text-center">
+    <h1 class="display-4">@SharedLocalizer[LocalizationConstants.ABOUT]</h1>
+</div>
+
+@* TODO: Add project page, version commit etc. *@
