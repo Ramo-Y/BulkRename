@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About" xml:space="preserve">
+    <value>A  oldalról</value>
+  </data>
   <data name="AnErrorOccuredHeader" xml:space="preserve">
     <value>Hiba történt a kérése feldolgozása során</value>
   </data>
@@ -154,7 +157,7 @@
     <value>TV-műsorok átnevezése előnézet</value>
   </data>
   <data name="RenamedOn" xml:space="preserve">
-    <value>Pénteken átnevezték</value>
+    <value>Átnevezve a</value>
     <comment>Translated with deepl</comment>
   </data>
   <data name="Request" xml:space="preserve">
