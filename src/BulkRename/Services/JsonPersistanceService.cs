@@ -35,7 +35,7 @@
                              true))
             {
                 sourceStream.SetLength(0);
-                await sourceStream.WriteAsync(bytes, 0, bytes.Length, cancellationToken);
+                await sourceStream.WriteAsync(bytes, cancellationToken);
             }
         }
 
