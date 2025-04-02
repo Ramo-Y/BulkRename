@@ -3,6 +3,8 @@
     public static class LocalizationConstants
     {
         public const string AN_ERROR_OCCURED_HEADER = "AnErrorOccuredHeader";
+        
+        public const string ABOUT = "About";
 
         public const string DETAILED_ERROR_MESSAGE = "DetailedErrorMessage";
 
