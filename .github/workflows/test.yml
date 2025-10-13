@@ -22,7 +22,7 @@ jobs:
         mkdir ${{ runner.temp }}/BulkRename/RenamingHistory
     - name: Create Env
       shell: pwsh
-      run: ./CreateEnvFile.ps1 -PersistanceMode "Database" -SqlServerSaPassword ${{ secrets.SQL_SERVER_SA_PASSWORD }} -BulkRenameFolder "${{ runner.temp }}/BulkRename/Files" -HistoryFolder "${{ runner.temp }}/BulkRename/RenamingHistory" -LogFolder "${{ runner.temp }}/BulkRename/Logs" -Version ${{ inputs.image_version }}
+      run: ./CreateEnvFile.ps1 -PersistanceMode "Database" -DbServer "mssqlserver" -SqlServerSaPassword ${{ secrets.SQL_SERVER_SA_PASSWORD }} -BulkRenameFolder "${{ runner.temp }}/BulkRename/Files" -HistoryFolder "${{ runner.temp }}/BulkRename/RenamingHistory" -LogFolder "${{ runner.temp }}/BulkRename/Logs" -Version ${{ inputs.image_version }}
       working-directory: src
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
