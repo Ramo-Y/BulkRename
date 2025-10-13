@@ -9,6 +9,8 @@
 	Mode for persistance of the history, allowed values are 'None', 'Database', and 'Json'. Default is 'None'
 .PARAMETER Registry
 	The docker registry for the image, default is 'docker.io/ramoy/'
+.PARAMETER DbServer
+	Hostname or IP Address of the database server, default is 'localhost'
 .PARAMETER DbName
 	Name of the database that will be created, default is 'BulkRename_Web_DB_Live'
 .PARAMETER DbPort
@@ -40,6 +42,7 @@ Param (
 	[Parameter(Mandatory = $false)][string]$Version = "latest",
 	[Parameter(Mandatory = $false)][string]$Registry = "docker.io/ramoy/",
 	[Parameter(Mandatory = $false)][string]$PersistanceMode = "None",
+	[Parameter(Mandatory = $false)][string]$DbServer = "localhost",
 	[Parameter(Mandatory = $false)][string]$DbName = "BulkRename_Web_DB_Live",
 	[Parameter(Mandatory = $false)][string]$DbPort = "14333",
 	[Parameter(Mandatory = $false)][string]$DbUser = "sa",
@@ -61,6 +64,7 @@ New-Item -ItemType File -Name ".env"
 Set-Content .\.env "VERSION=$Version"
 Add-Content .\.env "PERSITANCE_MODE=$PersistanceMode"
 Add-Content .\.env "DOCKER_REGISTRY=$Registry"
+Add-Content .\.env "DB_SERVER=$DbServer"
 Add-Content .\.env "DB_NAME=$DbName"
 Add-Content .\.env "SQL_SERVER_EXTERNAL_PORT=$DbPort"
 Add-Content .\.env "DB_USER=$DbUser"
