@@ -17,6 +17,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkRename", "BulkRename\Bu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkRename.IntegrationTests", "BulkRename.IntegrationTests\BulkRename.IntegrationTests.csproj", "{0F3F86EB-1BA2-499A-B48D-39E1E3DE665E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\build-test-cleanup.yml = ..\.github\workflows\build-test-cleanup.yml
+		..\.github\workflows\build-test-release-cleanup.yml = ..\.github\workflows\build-test-release-cleanup.yml
+		..\.github\workflows\build-test-release-cleanup_manually.yml = ..\.github\workflows\build-test-release-cleanup_manually.yml
+		..\.github\workflows\build.yml = ..\.github\workflows\build.yml
+		..\.github\workflows\cleanup.yml = ..\.github\workflows\cleanup.yml
+		..\.github\workflows\release.yml = ..\.github\workflows\release.yml
+		..\.github\workflows\set_version.yml = ..\.github\workflows\set_version.yml
+		..\.github\workflows\test.yml = ..\.github\workflows\test.yml
+		..\.github\workflows\update-dockerhub-readme.yml = ..\.github\workflows\update-dockerhub-readme.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +47,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {0B6E7D2A-D37D-42F6-A96C-C3A4687EA13A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4BAD450-4293-4327-825F-63EC09B51A99}
