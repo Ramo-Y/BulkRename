@@ -19,7 +19,7 @@ services:
     environment:
       ASPNETCORE_URLS: http://*:8080
       PersistanceMode: "${PERSITANCE_MODE}"
-      DbServer: "mssqlserver"
+      DbServer: $"{DB_SERVER}"
       DbName: "${DB_NAME}"
       DbPort: "1433"
       DbUser: "${DB_USER}"
