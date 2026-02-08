@@ -43,7 +43,7 @@ jobs:
       run: dotnet test src/**/*.IntegrationTests.csproj
     - name: Upload logs on fail
       if: ${{ failure() }}
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: Build failure logs
         path: ${{ runner.temp }}/BulkRename/Logs

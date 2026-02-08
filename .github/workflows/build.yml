@@ -34,7 +34,7 @@ jobs:
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ vars.IMAGE_NAME }}:${{ inputs.image_version }}
         outputs: type=docker,dest=/tmp/${{ vars.IMAGE_NAME }}.tar
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: ${{ vars.IMAGE_NAME }}
         path: /tmp/${{ vars.IMAGE_NAME }}.tar
