@@ -9,6 +9,6 @@
         public Guid SerieID { get; set; }
 
 #pragma warning disable CS8618
-        public string SerName { get; set; }
+        public string? SerName { get; set; }
     }
 }

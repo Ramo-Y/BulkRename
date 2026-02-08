@@ -9,7 +9,7 @@
         public Guid SeasonID { get; set; }
 
 #pragma warning disable CS8618
-        public string SsnNumberString { get; set; }
+        public string? SsnNumberString { get; set; }
 
         // ReSharper disable once InconsistentNaming
         public Guid SsnSerieID_FK { get; set; }
