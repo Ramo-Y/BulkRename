@@ -9,11 +9,11 @@
         public Guid EpisodeID { get; set; }
 
 #pragma warning disable CS8618
-        public string EpsEpisodeOriginalName { get; set; }
+        public string? EpsEpisodeOriginalName { get; set; }
 
-        public string EpsEpisodeNewName { get; set; }
+        public string? EpsEpisodeNewName { get; set; }
 
-        public string EpsNumberString { get; set; }
+        public string? EpsNumberString { get; set; }
 
         // ReSharper disable once InconsistentNaming
         public Guid EpsSeasonID_FK { get; set; }
