@@ -1,21 +1,28 @@
-﻿/*custom table*/
-
-td.oldname {
+﻿td.oldname {
     background: #fa6666;
+    width: 50%;
+    word-break: break-word;
 }
 
 td.newname {
     background: #05ca05;
+    width: 50%;
+    word-break: break-word;
+}
+
+td.filesize, th.filesize {
+    background: #f0f0f0;
+    white-space: nowrap;
+    width: 1%;
 }
 
 .customtable {
-    table-layout: fixed;
+    table-layout: auto;
     border-collapse: separate;
     width: 100%;
 }
 
 .customtable td {
-    max-width: 50%;
     padding-right: 10px;
     padding-left: 10px;
 }

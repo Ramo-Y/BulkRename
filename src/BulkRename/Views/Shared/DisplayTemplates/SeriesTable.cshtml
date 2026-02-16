@@ -13,12 +13,14 @@
             <tr>
                 <th class="oldname">@SharedLocalizer[LocalizationConstants.OLD_NAME]</th>
                 <th class="newname">@SharedLocalizer[LocalizationConstants.NEW_NAME]</th>
+                <th class="filesize">@SharedLocalizer[LocalizationConstants.FILE_SIZE_IN_MB]</th>
             </tr>
             @foreach (var ser in s.Value)
             {
                 <tr>
                     <td class="oldname">@ser.OldName</td>
                     <td class="newname">@ser.NewName</td>
+                    <td class="filesize">@ser.FileSizeInMb.ToString("F2")</td>
                 </tr>
             }
         </tbody>
