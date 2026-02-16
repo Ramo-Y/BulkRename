@@ -6,5 +6,7 @@
         public string OldName { get; set; }
 
         public string NewName { get; set; }
+
+        public double FileSizeInMb { get; set; }
     }
 }

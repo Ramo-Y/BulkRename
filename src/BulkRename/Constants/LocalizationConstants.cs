@@ -10,6 +10,8 @@
 
         public const string ERROR = "Error";
 
+        public const string FILE_SIZE_IN_MB = "FileSizeInMb";
+
         public const string HISTORY = "History";
 
         public const string HOME = "Home";

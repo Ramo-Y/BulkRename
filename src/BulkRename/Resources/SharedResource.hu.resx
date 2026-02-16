@@ -132,6 +132,9 @@
   <data name="Error" xml:space="preserve">
     <value>Hiba</value>
   </data>
+  <data name="FileSizeInMb" xml:space="preserve">
+    <value>Fájlméret (MB)</value>
+  </data>
   <data name="History" xml:space="preserve">
     <value>Előzmények</value>
   </data>

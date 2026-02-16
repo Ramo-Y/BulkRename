@@ -132,6 +132,9 @@ and restarting the app.</value>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="FileSizeInMb" xml:space="preserve">
+    <value>File size (MB)</value>
+  </data>
   <data name="History" xml:space="preserve">
     <value>History</value>
   </data>

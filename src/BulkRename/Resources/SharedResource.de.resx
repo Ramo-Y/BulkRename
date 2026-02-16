@@ -132,6 +132,9 @@ setzen und die Anwendung neu starten.</value>
   <data name="Error" xml:space="preserve">
     <value>Fehler</value>
   </data>
+  <data name="FileSizeInMb" xml:space="preserve">
+    <value>Dateigrösse (MB)</value>
+  </data>
   <data name="History" xml:space="preserve">
     <value>Verlauf</value>
   </data>
