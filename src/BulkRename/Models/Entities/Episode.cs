@@ -15,6 +15,12 @@
 
         public string? EpsNumberString { get; set; }
 
+        public double EpsEpisodeFileSizeInMb { get; set; }
+
+        public string EpsFileExtension { get; set; }
+
+        public DateTime? EpsLastWriteTimeTimeUtc { get; set; }
+
         // ReSharper disable once InconsistentNaming
         public Guid EpsSeasonID_FK { get; set; }
 
