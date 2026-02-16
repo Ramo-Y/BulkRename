@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="../.gitignore" />
+    <File Path="../DEVELOPMENT.md" />
+    <File Path="../README.md" />
+    <File Path=".dockerignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Dockerfile" />
+  </Folder>
+  <Project Path="BulkRename.IntegrationTests/BulkRename.IntegrationTests.csproj" />
+  <Project Path="BulkRename/BulkRename.csproj" />
+</Solution>
