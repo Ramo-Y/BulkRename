@@ -159,7 +159,7 @@
             var responseBody = await client.GetStringAsync(submitUri);
             await WriteHighlightedOutput($"Respose Value is: {responseBody}");
 
-            var darkPath = Path.Combine(mappedFilesFolderPath, "Dark", $"{SEASON_0}1");
+            var darkPath = Path.Combine(mappedFilesFolderPath, DARK, $"{SEASON_0}1");
             var darkActualNames = GetVideoFilesFromFolder(darkPath, supportedFileEndings);
             var theWalkingDeadSeason01Path = Path.Combine(mappedFilesFolderPath, THE_WALKING_DEAD, $"{SEASON_0}1");
             var theWalkingDeadSeason01ActualNames = GetVideoFilesFromFolder(theWalkingDeadSeason01Path, supportedFileEndings);
