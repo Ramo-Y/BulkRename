@@ -51,12 +51,12 @@
                         var seasonItems = episodeItems.GroupBy(x => x.Season).Select(x => x.Key);
                         var renamingSessionItems = seasonItems.Select(GetSessionName).Select(
                             sessionName => new RenamingSession
-                                               {
-                                                   RenamingSessionID = Guid.NewGuid(),
-                                                   RenExecutingDateTime = DateTime.Now,
-                                                   RenName = sessionName,
-                                                   RenRenamingSessionIsOk = true
-                                               }).ToList();
+                            {
+                                RenamingSessionID = Guid.NewGuid(),
+                                RenExecutingDateTime = DateTime.Now,
+                                RenName = sessionName,
+                                RenRenamingSessionIsOk = true
+                            }).ToList();
 
                         foreach (var episode in episodeItems)
                         {
@@ -64,13 +64,13 @@
                             {
                                 var currentSession = renamingSessionItems.First(r => r.RenName == GetSessionName(episode.Season));
                                 var sessionToEpisode = new RenamingSessionToEpisode
-                                                           {
-                                                               RenamingSessionToEpisodeID = Guid.NewGuid(),
-                                                               RenamingSession = currentSession,
-                                                               RseRenamingSessionID_FK = currentSession.RenamingSessionID,
-                                                               Episode = episode,
-                                                               RseEpisodeID_FK = episode.EpisodeID
-                                                           };
+                                {
+                                    RenamingSessionToEpisodeID = Guid.NewGuid(),
+                                    RenamingSession = currentSession,
+                                    RseRenamingSessionID_FK = currentSession.RenamingSessionID,
+                                    Episode = episode,
+                                    RseEpisodeID_FK = episode.EpisodeID
+                                };
                                 renamingSessionToEpisodes.Add(sessionToEpisode);
                                 var episodeFileInfo = GetEpisodeFileInfo(episode);
                                 var newPath = Path.Combine(GetSeasonPath(episode), episode.EpsEpisodeNewName);
@@ -113,10 +113,10 @@
         {
             var serieItems = serieFolders.Select(
                 folder => new Serie
-                              {
-                                  SerieID = Guid.NewGuid(),
-                                  SerName = new DirectoryInfo(folder).Name
-                              }).ToList();
+                {
+                    SerieID = Guid.NewGuid(),
+                    SerName = new DirectoryInfo(folder).Name
+                }).ToList();
 
             _logger.LogInformation("Found the following series:");
 
@@ -138,12 +138,12 @@
                 seasonItems.AddRange(
                     seasonFolders.Select(
                         seasonFolder => new Season
-                                            {
-                                                SeasonID = Guid.NewGuid(),
-                                                Serie = serieItem,
-                                                SsnSerieID_FK = serieItem.SerieID,
-                                                SsnNumberString = seasonFolder.Substring(seasonFolder.Length - 2)
-                                            }));
+                        {
+                            SeasonID = Guid.NewGuid(),
+                            Serie = serieItem,
+                            SsnSerieID_FK = serieItem.SerieID,
+                            SsnNumberString = seasonFolder.Substring(seasonFolder.Length - 2)
+                        }));
             }
 
             return seasonItems;
@@ -178,15 +178,19 @@
                     var fileInfo = new FileInfo(episodesPathItem);
                     var newName = seasonItem.Serie.SerName + RenamingConstants.NAME_FIRST_PRAEFIX + seasonItem.SsnNumberString + RenamingConstants.NAME_SECOND_PRAEFIX
                                   + $"{episodeStartNumber:D2}" + fileInfo.Extension;
+                    var fileSizeInMB = fileInfo.Length / (1024.0 * 1024.0);
                     var episode = new Episode
-                                      {
-                                          EpisodeID = Guid.NewGuid(),
-                                          EpsSeasonID_FK = seasonItem.SeasonID,
-                                          Season = seasonItem,
-                                          EpsNumberString = $"{episodeStartNumber:D2}",
-                                          EpsEpisodeOriginalName = fileInfo.Name,
-                                          EpsEpisodeNewName = newName
-                                      };
+                    {
+                        EpisodeID = Guid.NewGuid(),
+                        EpsSeasonID_FK = seasonItem.SeasonID,
+                        Season = seasonItem,
+                        EpsNumberString = $"{episodeStartNumber:D2}",
+                        EpsEpisodeOriginalName = fileInfo.Name,
+                        EpsEpisodeNewName = newName,
+                        EpsEpisodeFileSizeInMb = fileSizeInMB,
+                        EpsFileExtension = fileInfo.Extension,
+                        EpsLastWriteTimeTimeUtc = fileInfo.LastWriteTimeUtc,
+                    };
 
                     episodeItems.Add(episode);
                     episodeStartNumber++;
