@@ -143,7 +143,7 @@ For the application to recognize the files and rename them correctly, a folder s
 ```
 /Downloads
   /Files
-    /The Walking Dead
+    /The Walking Dead (2010)
       /Season 01
         twd.s1e01.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv
         twd.s1e02.GERMAN.5.1.UNTOUCHED.DUBBED.DL.AC3.1080p.WEB-DL.h264-TvR.mkv
@@ -161,17 +161,17 @@ This is the home page with the **Preview Renaming of TV-Shows (1)** button in th
 ![Home](./.github/01-Home.png)
 
 ## Series overview
-On the preview page, the entries are grouped by **Series - Season (2)**, and the **original name (3)** and the **new name after renaming (4)** are displayed. If the new file names are correct, the renaming can be performed with **Submit Renaming (5)**.
+On the preview page, the entries are grouped by **Series (year) - Season (2)**, the **original name (3)**, the **new name after renaming (4)**, and the **file size (5)** are displayed. If the new file names are correct, the renaming can be performed with **Submit Renaming (6)**.
 
 ![Series overview](./.github/02-Series-overview.png)
 
 ## Renamed series overview
-If the renaming was successful, this is displayed on the page with the message **Successfully renamed files (6)**. Here the renames are also grouped by **series - season (7)**.
+If the renaming was successful, this is displayed on the page with the message **Successfully renamed files (7)**. Here the renames are also grouped by **Series (year) - Season (8)**.
 
 ![Renamed series overview](./.github/03-Renamed-series-overview.png)
 
 ## History
-Call up the history page by pressing **History (8)**. The first time, the page will be empty, but if you press **Load History (9)**, your entire renaming history will be loaded, grouped by **series - season - date and time of renaming (10)**. Once loaded, the history is retained until you restart the application or reload it by pressing the button again.
+Call up the history page by pressing **History (9)**. The first time, the page will be empty, but if you press **Load History (10)**, your entire renaming history will be loaded, grouped by **Series (year) - Season XX - date and time of renaming (11)**. Once loaded, the history is retained until you restart the application or reload it by pressing the button again.
 
 ![History](./.github/04-History.png)
 

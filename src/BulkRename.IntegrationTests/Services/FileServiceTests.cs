@@ -87,7 +87,8 @@
         {
             // arrange
             const string SEASON_0 = "Season 0";
-            const string THE_WALKING_DEAD = "The Walking Dead";
+            const string THE_WALKING_DEAD = "The Walking Dead (2010)";
+            const string DARK = "Dark (2017)";
 
             ConfigurationHelper.SetEnvironmentVariables();
 
@@ -105,16 +106,16 @@
 
             var darkExpectedNames = new List<string>
                                         {
-                                            "Dark - S01E01.mkv",
-                                            "Dark - S01E02.mkv",
-                                            "Dark - S01E03.mkv",
-                                            "Dark - S01E04.mkv",
-                                            "Dark - S01E05.mkv",
-                                            "Dark - S01E06.mkv",
-                                            "Dark - S01E07.mkv",
-                                            "Dark - S01E08.mkv",
-                                            "Dark - S01E09.mkv",
-                                            "Dark - S01E10.mkv"
+                                            $"{DARK} - S01E01.mkv",
+                                            $"{DARK} - S01E02.mkv",
+                                            $"{DARK} - S01E03.mkv",
+                                            $"{DARK} - S01E04.mkv",
+                                            $"{DARK} - S01E05.mkv",
+                                            $"{DARK} - S01E06.mkv",
+                                            $"{DARK} - S01E07.mkv",
+                                            $"{DARK} - S01E08.mkv",
+                                            $"{DARK} - S01E09.mkv",
+                                            $"{DARK} - S01E10.mkv"
                                         };
 
             var theWalkingDeadSeason01ExpectedNames = new List<string>
@@ -158,7 +159,7 @@
             var responseBody = await client.GetStringAsync(submitUri);
             await WriteHighlightedOutput($"Respose Value is: {responseBody}");
 
-            var darkPath = Path.Combine(mappedFilesFolderPath, "Dark", $"{SEASON_0}1");
+            var darkPath = Path.Combine(mappedFilesFolderPath, DARK, $"{SEASON_0}1");
             var darkActualNames = GetVideoFilesFromFolder(darkPath, supportedFileEndings);
             var theWalkingDeadSeason01Path = Path.Combine(mappedFilesFolderPath, THE_WALKING_DEAD, $"{SEASON_0}1");
             var theWalkingDeadSeason01ActualNames = GetVideoFilesFromFolder(theWalkingDeadSeason01Path, supportedFileEndings);

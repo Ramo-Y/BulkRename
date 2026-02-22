@@ -38,7 +38,8 @@
                         new Series
                             {
                                 OldName = episode.EpsEpisodeOriginalName,
-                                NewName = episode.EpsEpisodeNewName
+                                NewName = episode.EpsEpisodeNewName,
+                                FileSizeInMb = episode.EpsEpisodeFileSizeInMb
                             });
                 }
 
