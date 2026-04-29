@@ -1,20 +1,29 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 
-ARG BUILDCONFIG=RELEASE
+ARG BUILDCONFIG=Release
 ARG VERSION=1.0.0.0
 
-COPY ./BulkRename/BulkRename.csproj /build/
-COPY ./Directory.Build.props /build/
-COPY ./Directory.Packages.props /build/
+WORKDIR /build
 
-RUN dotnet restore ./build/BulkRename.csproj
+COPY ./BulkRename/BulkRename.csproj .
+COPY ./Directory.Build.props .
+COPY ./Directory.Packages.props .
 
-COPY . ./build/
-WORKDIR /build/
-RUN dotnet publish ./BulkRename/BulkRename.csproj -c ${BUILDCONFIG} -o out /p:version=${VERSION}
+RUN dotnet restore ./BulkRename.csproj
+
+COPY . .
+RUN dotnet publish ./BulkRename.csproj \
+    -c ${BUILDCONFIG} \
+    -o /app/out \
+    /p:Version=${VERSION} \
+    /p:UseAppHost=false
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 WORKDIR /app
+COPY --from=build /app/out ./
+RUN chown -R appuser:appgroup /app
+USER appuser
 EXPOSE 8080
-COPY --from=build /build/out .
+ENV ASPNETCORE_URLS=http://+:8080
 ENTRYPOINT ["dotnet", "BulkRename.dll"]
