@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:10.0-alpine AS build
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 
 ARG BUILDCONFIG=RELEASE
 ARG VERSION=1.0.0.0
@@ -13,7 +13,7 @@ COPY . ./build/
 WORKDIR /build/
 RUN dotnet publish ./BulkRename/BulkRename.csproj -c ${BUILDCONFIG} -o out /p:version=${VERSION}
 
-FROM mcr.microsoft.com/dotnet/sdk:10.0-alpine
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
 WORKDIR /app
 EXPOSE 8080
 COPY --from=build /build/out .
