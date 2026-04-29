@@ -35,7 +35,7 @@ jobs:
       run: |
         docker load --input /tmp/${{ vars.IMAGE_NAME }}.tar
         docker image ls -a
-    - name: Docker Cmpose
+    - name: Docker Compose
       shell: pwsh
       run: docker compose up -d --wait --wait-timeout 60
       working-directory: src
