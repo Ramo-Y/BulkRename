@@ -24,7 +24,8 @@ RUN apk add --no-cache curl \
     && adduser -S appuser -G appgroup
 WORKDIR /app
 COPY --from=build /app/out ./
-RUN chown -R appuser:appgroup /app
+RUN mkdir -p /app/Files /app/Logs /app/RenamingHistory \
+    && chown -R appuser:appgroup /app
 USER appuser
 EXPOSE 8080
 ENV ASPNETCORE_URLS=http://+:8080
