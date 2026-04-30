@@ -15,7 +15,6 @@ services:
     image: ${DOCKER_REGISTRY}bulkrename:${VERSION}
     container_name: "bulkrename"
     environment:
-      ASPNETCORE_URLS: http://*:8080
       PersistanceMode: "${PERSITANCE_MODE}"
       DbServer: "mssqlserver"
       DbName: "${DB_NAME}"
