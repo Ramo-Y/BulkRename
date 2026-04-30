@@ -34,7 +34,7 @@ services:
       - "${LOG_FOLDER}://app//Logs//"
       - "${HISTORY_FOLDER}://app//RenamingHistory//"
     healthcheck:
-      test: wget -qO - http://localhost:8080/healthz/ || exit 1
+      test: ["CMD", "curl", "-f", "http://localhost:8080/healthz/"]
       interval: 10s
       timeout: 5s
       retries: 10

@@ -19,7 +19,9 @@ RUN dotnet publish ./BulkRename.csproj \
     /p:UseAppHost=false
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+RUN apk add --no-cache curl \
+    && addgroup -S appgroup \
+    && adduser -S appuser -G appgroup
 WORKDIR /app
 COPY --from=build /app/out ./
 RUN chown -R appuser:appgroup /app
