@@ -3,15 +3,14 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILDCONFIG=Release
 ARG VERSION=1.0.0.0
 
-WORKDIR /build
+COPY ./BulkRename/BulkRename.csproj /build/
+COPY ./Directory.Build.props /build/
+COPY ./Directory.Packages.props /build/
 
-COPY ./BulkRename/BulkRename.csproj .
-COPY ./Directory.Build.props .
-COPY ./Directory.Packages.props .
+WORKDIR /build
 
 RUN dotnet restore ./BulkRename.csproj
 
-COPY . .
 RUN dotnet publish ./BulkRename.csproj \
     -c ${BUILDCONFIG} \
     -o /app/out \
