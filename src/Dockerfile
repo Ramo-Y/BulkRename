@@ -19,9 +19,11 @@ RUN dotnet publish ./BulkRename.csproj \
     /p:UseAppHost=false
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
-RUN apk add --no-cache curl \
-    && addgroup -S appgroup \
-    && adduser -S appuser -G appgroup
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends curl \
+    && groupadd -r appgroup \
+    && useradd -r -g appgroup appuser \
+    && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 COPY --from=build /app/out ./
 RUN mkdir -p /app/Files /app/Logs /app/RenamingHistory \
