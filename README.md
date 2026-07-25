@@ -1,6 +1,6 @@
 <div align="center">
 
-[![BulkRename](./.github/Logo.svg)](#ReadMe)
+[![BulkRename](./.github/images/Logo.svg)](#ReadMe)
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/ramoy/bulkrename.svg)](https://hub.docker.com/r/ramoy/bulkrename)
 [![MIT Licensed](https://img.shields.io/github/license/ramo-y/BulkRename.svg)](https://github.com/Ramo-Y/BulkRename/blob/master/LICENSE)
@@ -158,22 +158,22 @@ The files must already be sorted by name according to the episode order for the 
 ## Home Page
 This is the home page with the **Preview Renaming of TV-Shows (1)** button in the middle. Pressing the button takes you to the preview page.
 
-![Home](./.github/01-Home.png)
+![Home](./.github/images/01-Home.png)
 
 ## Series overview
 On the preview page, the entries are grouped by **Series (year) - Season (2)**, the **original name (3)**, the **new name after renaming (4)**, and the **file size (5)** are displayed. If the new file names are correct, the renaming can be performed with **Submit Renaming (6)**.
 
-![Series overview](./.github/02-Series-overview.png)
+![Series overview](./.github/images/02-Series-overview.png)
 
 ## Renamed series overview
 If the renaming was successful, this is displayed on the page with the message **Successfully renamed files (7)**. Here the renames are also grouped by **Series (year) - Season (8)**.
 
-![Renamed series overview](./.github/03-Renamed-series-overview.png)
+![Renamed series overview](./.github/images/03-Renamed-series-overview.png)
 
 ## History
 Call up the history page by pressing **History (9)**. The first time, the page will be empty, but if you press **Load History (10)**, your entire renaming history will be loaded, grouped by **Series (year) - Season XX - date and time of renaming (11)**. Once loaded, the history is retained until you restart the application or reload it by pressing the button again.
 
-![History](./.github/04-History.png)
+![History](./.github/images/04-History.png)
 
 # Development
 Please read the [development documentation](./DEVELOPMENT.md) if you would like to participate in the development.
