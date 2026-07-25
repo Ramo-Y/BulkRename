@@ -99,7 +99,7 @@
             var mappedFilesFolderPath = ConfigurationHelper.GetContainerMappedFilesFolderPath();
             await Console.Out.WriteLineAsync($"Mapped container path is {mappedFilesFolderPath}");
             var supportedFileEndings = ConfigurationHelper.GetSupportedFileEndings();
-            await Console.Out.WriteLineAsync($"Supported file endings are {supportedFileEndings}");
+            await Console.Out.WriteLineAsync($"Supported file endings are {string.Join(";", supportedFileEndings)}");
 
             DeleteFilesRecursive(mappedFilesFolderPath);
             CopyFilesRecursively(testResourcesPath, mappedFilesFolderPath);
