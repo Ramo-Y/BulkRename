@@ -16,10 +16,11 @@ jobs:
       uses: actions/checkout@v6
     - name: Create temp directories
       run: |
-        mkdir ${{ runner.temp }}/BulkRename
-        mkdir ${{ runner.temp }}/BulkRename/Files
-        mkdir ${{ runner.temp }}/BulkRename/Logs
-        mkdir ${{ runner.temp }}/BulkRename/RenamingHistory
+        mkdir -p ${{ runner.temp }}/BulkRename
+        mkdir -p ${{ runner.temp }}/BulkRename/Files
+        mkdir -p ${{ runner.temp }}/BulkRename/Logs
+        mkdir -p ${{ runner.temp }}/BulkRename/RenamingHistory
+        chmod -R 777 "${{ runner.temp }}/BulkRename"
     - name: Create Env
       shell: pwsh
       run: ./CreateEnvFile.ps1 -PersistanceMode "Database" -SqlServerSaPassword ${{ secrets.SQL_SERVER_SA_PASSWORD }} -BulkRenameFolder "${{ runner.temp }}/BulkRename/Files" -HistoryFolder "${{ runner.temp }}/BulkRename/RenamingHistory" -LogFolder "${{ runner.temp }}/BulkRename/Logs" -Version ${{ inputs.image_version }}
@@ -40,7 +41,7 @@ jobs:
       run: docker compose up -d --wait --wait-timeout 60
       working-directory: src
     - name: Integration Tests
-      run: dotnet test src/**/*.IntegrationTests.csproj
+      run: dotnet test src/**/*.IntegrationTests.csproj --logger "trx;LogFileName=integration-tests.trx"
     - name: Upload logs on fail
       if: ${{ failure() }}
       uses: actions/upload-artifact@v6
