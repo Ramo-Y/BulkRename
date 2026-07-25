@@ -1,20 +1,23 @@
 ﻿namespace BulkRename.IntegrationTests.Services
 {
+    using BulkRename.IntegrationTests.Constants;
+    using BulkRename.IntegrationTests.Helpers;
+    using NUnit.Framework;
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.IO;
     using System.Linq;
     using System.Net.Http;
+    using System.Runtime.InteropServices;
     using System.Text;
-
-    using BulkRename.IntegrationTests.Constants;
-    using BulkRename.IntegrationTests.Helpers;
-
-    using NUnit.Framework;
 
     [TestFixture]
     public class FileServiceTests
     {
+        private const string WritableDirectoryPermissions = "777";
+        private const string WritableFilePermissions = "666";
+
         private static void DeleteFilesRecursive(string mappedFilesFolderPath)
         {
             var directoryInfo = new DirectoryInfo(mappedFilesFolderPath);
@@ -32,16 +35,85 @@
 
         private static void CopyFilesRecursively(string sourcePath, string targetPath)
         {
+            Directory.CreateDirectory(targetPath);
+
             var allDirectories = Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories);
-            foreach (var dirPath in allDirectories)
+            foreach (var sourceDirectory in allDirectories)
             {
-                Directory.CreateDirectory(dirPath.Replace(sourcePath, targetPath));
+                var destinationDirectory = sourceDirectory.Replace(sourcePath, targetPath);
+                Directory.CreateDirectory(destinationDirectory);
             }
 
             var allFiles = Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories);
-            foreach (var newPath in allFiles)
+            foreach (var sourceFile in allFiles)
             {
-                File.Copy(newPath, newPath.Replace(sourcePath, targetPath), true);
+                var destinationFile = sourceFile.Replace(sourcePath, targetPath);
+                var destinationDirectory = Path.GetDirectoryName(destinationFile);
+
+                if (!string.IsNullOrWhiteSpace(destinationDirectory))
+                {
+                    Directory.CreateDirectory(destinationDirectory);
+                }
+
+                File.Copy(sourceFile, destinationFile, true);
+            }
+
+            EnsureWritablePermissions(targetPath);
+        }
+
+        private static void EnsureWritablePermissions(string targetPath)
+        {
+            if (!(RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ||
+                  RuntimeInformation.IsOSPlatform(OSPlatform.OSX)))
+            {
+                return;
+            }
+
+            if (!Directory.Exists(targetPath))
+            {
+                return;
+            }
+
+            RunChmod(WritableDirectoryPermissions, targetPath);
+
+            foreach (var directory in Directory.GetDirectories(targetPath, "*", SearchOption.AllDirectories))
+            {
+                RunChmod(WritableDirectoryPermissions, directory);
+            }
+
+            foreach (var file in Directory.GetFiles(targetPath, "*", SearchOption.AllDirectories))
+            {
+                RunChmod(WritableFilePermissions, file);
+            }
+        }
+
+        private static void RunChmod(string mode, string path)
+        {
+            using var process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = "chmod",
+                    Arguments = $"{mode} \"{path}\"",
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                }
+            };
+
+            process.Start();
+
+            var standardOutput = process.StandardOutput.ReadToEnd();
+            var standardError = process.StandardError.ReadToEnd();
+
+            process.WaitForExit();
+
+            if (process.ExitCode != 0)
+            {
+                throw new InvalidOperationException(
+                    $"chmod failed for path '{path}' with mode '{mode}'. ExitCode: {process.ExitCode}. " +
+                    $"StdOut: {standardOutput}. StdErr: {standardError}");
             }
         }
 
