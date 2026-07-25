@@ -30,9 +30,9 @@ services:
     ports:
       - "${BULK_RENAME_PORT}:8080"
     volumes:
-      - "${BULK_RENAME_FOLDER}://app//Files//"
-      - "${LOG_FOLDER}://app//Logs//"
-      - "${HISTORY_FOLDER}://app//RenamingHistory//"
+      - "${BULK_RENAME_FOLDER}:/app/Files/"
+      - "${LOG_FOLDER}:/app/Logs/"
+      - "${HISTORY_FOLDER}:/app/RenamingHistory/"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/healthz/"]
       interval: 10s
