@@ -36,11 +36,11 @@
                 {
                     series.Add(
                         new Series
-                            {
-                                OldName = episode.EpsEpisodeOriginalName,
-                                NewName = episode.EpsEpisodeNewName,
-                                FileSizeInMb = episode.EpsEpisodeFileSizeInMb
-                            });
+                        {
+                            OldName = episode.EpsEpisodeOriginalName,
+                            NewName = episode.EpsEpisodeNewName,
+                            FileSizeInMb = episode.EpsEpisodeFileSizeInMb
+                        });
                 }
 
                 var seasonName = $"{serieSerName} - Season {season.Key.SsnNumberString}";
@@ -48,14 +48,23 @@
                 _dictionary.Add(seasonName, series);
             }
 
-            _logger.LogInformation($"{seasons.Count()} Seasons to rename", seasons);
+            _logger.LogInformation("{Count} Seasons to rename", seasons.Count());
 
             return View(_dictionary);
         }
 
         public async Task<IActionResult> RenameAsync()
         {
-            await _fileService.RenameSelectedEpisodeItems(_allFileAndFolderItemsFromRootFolder);
+            try
+            {
+                await _fileService.RenameSelectedEpisodeItems(_allFileAndFolderItemsFromRootFolder);
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError(exception, "Something went wrong on the renaming {Message}", exception.Message);
+                throw;
+            }
+
             return View("Rename", _dictionary);
         }
     }
