@@ -166,16 +166,19 @@
             var theWalkingDeadSeason02Path = Path.Combine(mappedFilesFolderPath, THE_WALKING_DEAD, $"{SEASON_0}2");
             var theWalkingDeadSeason02ActualNames = GetVideoFilesFromFolder(theWalkingDeadSeason02Path, supportedFileEndings);
 
-            // assert
-            Assert.That(darkActualNames, Is.EqualTo(darkExpectedNames), ErrorMessage(darkExpectedNames, darkActualNames));
-            Assert.That(
-                theWalkingDeadSeason01ActualNames,
-                Is.EqualTo(theWalkingDeadSeason01ExpectedNames),
-                ErrorMessage(theWalkingDeadSeason01ExpectedNames, theWalkingDeadSeason01ActualNames));
-            Assert.That(
-                theWalkingDeadSeason02ActualNames,
-                Is.EqualTo(theWalkingDeadSeason02ExpectedNames),
-                ErrorMessage(theWalkingDeadSeason02ExpectedNames, theWalkingDeadSeason02ActualNames));
+            using (Assert.EnterMultipleScope())
+            {
+                // assert
+                Assert.That(darkActualNames, Is.EqualTo(darkExpectedNames), ErrorMessage(darkExpectedNames, darkActualNames));
+                Assert.That(
+                    theWalkingDeadSeason01ActualNames,
+                    Is.EqualTo(theWalkingDeadSeason01ExpectedNames),
+                    ErrorMessage(theWalkingDeadSeason01ExpectedNames, theWalkingDeadSeason01ActualNames));
+                Assert.That(
+                    theWalkingDeadSeason02ActualNames,
+                    Is.EqualTo(theWalkingDeadSeason02ExpectedNames),
+                    ErrorMessage(theWalkingDeadSeason02ExpectedNames, theWalkingDeadSeason02ActualNames));
+            }
         }
     }
 }
