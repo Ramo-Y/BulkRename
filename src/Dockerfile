@@ -3,19 +3,24 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILDCONFIG=Release
 ARG VERSION=1.0.0.0
 
-COPY ./BulkRename/BulkRename.csproj /build/
-COPY ./Directory.Build.props /build/
-COPY ./Directory.Packages.props /build/
+WORKDIR /src
 
-WORKDIR /build
+COPY ./Directory.Build.props ./
+COPY ./Directory.Packages.props ./
+COPY ./BulkRename/BulkRename.csproj ./BulkRename/
 
-RUN dotnet restore ./BulkRename.csproj
+RUN dotnet restore ./BulkRename/BulkRename.csproj
+
+COPY ./BulkRename/. ./BulkRename/
+
+WORKDIR /src/BulkRename
 
 RUN dotnet publish ./BulkRename.csproj \
     -c ${BUILDCONFIG} \
     -o /app/out \
     /p:Version=${VERSION} \
-    /p:UseAppHost=false
+    /p:UseAppHost=false \
+    --no-restore
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
 RUN apt-get update \
