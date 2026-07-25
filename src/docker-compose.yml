@@ -14,6 +14,7 @@ services:
       - "mssqlserver"
     image: ${DOCKER_REGISTRY}bulkrename:${VERSION}
     container_name: "bulkrename"
+    user: "0:0"
     environment:
       PersistanceMode: "${PERSITANCE_MODE}"
       DbServer: "mssqlserver"
