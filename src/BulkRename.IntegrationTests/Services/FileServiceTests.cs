@@ -154,10 +154,10 @@
 
             var client = new HttpClient();
             var previewResponseBody = await client.GetStringAsync(previewUri);
-            await WriteHighlightedOutput($"Preview respose Value is: {previewResponseBody}");
+            await WriteHighlightedOutput($"Preview response Value is: {previewResponseBody}");
 
             var responseBody = await client.GetStringAsync(submitUri);
-            await WriteHighlightedOutput($"Respose Value is: {responseBody}");
+            await WriteHighlightedOutput($"Response Value is: {responseBody}");
 
             var darkPath = Path.Combine(mappedFilesFolderPath, DARK, $"{SEASON_0}1");
             var darkActualNames = GetVideoFilesFromFolder(darkPath, supportedFileEndings);
