@@ -45,39 +45,35 @@
         {
             var renamingSessionToEpisodes = new List<RenamingSessionToEpisode>();
 
-            await Task.Run(
-                () =>
-                    {
-                        var seasonItems = episodeItems.GroupBy(x => x.Season).Select(x => x.Key);
-                        var renamingSessionItems = seasonItems.Select(GetSessionName).Select(
-                            sessionName => new RenamingSession
-                            {
-                                RenamingSessionID = Guid.NewGuid(),
-                                RenExecutingDateTime = DateTime.Now,
-                                RenName = sessionName,
-                                RenRenamingSessionIsOk = true
-                            }).ToList();
+            var seasonItems = episodeItems.GroupBy(x => x.Season).Select(x => x.Key);
+            var renamingSessionItems = seasonItems.Select(GetSessionName).Select(
+                sessionName => new RenamingSession
+                {
+                    RenamingSessionID = Guid.NewGuid(),
+                    RenExecutingDateTime = DateTime.Now,
+                    RenName = sessionName,
+                    RenRenamingSessionIsOk = true
+                }).ToList();
 
-                        foreach (var episode in episodeItems)
-                        {
-                            if (episode.EpsEpisodeOriginalName != episode.EpsEpisodeNewName)
-                            {
-                                var currentSession = renamingSessionItems.First(r => r.RenName == GetSessionName(episode.Season));
-                                var sessionToEpisode = new RenamingSessionToEpisode
-                                {
-                                    RenamingSessionToEpisodeID = Guid.NewGuid(),
-                                    RenamingSession = currentSession,
-                                    RseRenamingSessionID_FK = currentSession.RenamingSessionID,
-                                    Episode = episode,
-                                    RseEpisodeID_FK = episode.EpisodeID
-                                };
-                                renamingSessionToEpisodes.Add(sessionToEpisode);
-                                var episodeFileInfo = GetEpisodeFileInfo(episode);
-                                var newPath = Path.Combine(GetSeasonPath(episode), episode.EpsEpisodeNewName);
-                                episodeFileInfo.MoveTo(newPath);
-                            }
-                        }
-                    });
+            foreach (var episode in episodeItems)
+            {
+                if (episode.EpsEpisodeOriginalName != episode.EpsEpisodeNewName)
+                {
+                    var currentSession = renamingSessionItems.First(r => r.RenName == GetSessionName(episode.Season));
+                    var sessionToEpisode = new RenamingSessionToEpisode
+                    {
+                        RenamingSessionToEpisodeID = Guid.NewGuid(),
+                        RenamingSession = currentSession,
+                        RseRenamingSessionID_FK = currentSession.RenamingSessionID,
+                        Episode = episode,
+                        RseEpisodeID_FK = episode.EpisodeID
+                    };
+                    renamingSessionToEpisodes.Add(sessionToEpisode);
+                    var episodeFileInfo = GetEpisodeFileInfo(episode);
+                    var newPath = Path.Combine(GetSeasonPath(episode), episode.EpsEpisodeNewName);
+                    episodeFileInfo.MoveTo(newPath);
+                }
+            }
 
             await _persistanceService.PersistRenamingInformation(renamingSessionToEpisodes);
 
