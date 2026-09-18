@@ -2,8 +2,9 @@
 
 [![BulkRename](./.github/Logo.svg)](#ReadMe)
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/ramoy/bulkrename.svg)](https://hub.docker.com/r/ramoy/bulkrename)
-[![MIT Licensed](https://img.shields.io/github/license/ramo-y/BulkRename.svg)](https://github.com/Ramo-Y/BulkRename/blob/master/LICENSE)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ramoy/bulkrename)](https://hub.docker.com/r/ramoy/bulkrename)
+[![Docker Image Size](https://img.shields.io/docker/image-size/ramoy/bulkrename)](https://hub.docker.com/r/ramoy/bulkrename)
+[![MIT Licensed](https://img.shields.io/github/license/ramo-y/BulkRename)](https://github.com/Ramo-Y/BulkRename/blob/master/LICENSE)
 [![Activity](https://img.shields.io/github/commit-activity/m/Ramo-Y/BulkRename)](https://github.com/Ramo-Y/BulkRename/pulse)
 [![ci](https://img.shields.io/github/actions/workflow/status/Ramo-Y/BulkRename/build-test-cleanup.yml?label=ci)](https://github.com/Ramo-Y/BulkRename/actions/workflows/build-test-cleanup.yml)
 [![release](https://img.shields.io/github/actions/workflow/status/Ramo-Y/BulkRename/build-test-release-cleanup.yml?label=release)](https://github.com/Ramo-Y/BulkRename/actions/workflows/build-test-release-cleanup.yml)
