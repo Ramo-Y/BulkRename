@@ -11,5 +11,7 @@
         internal const string LOG_FILE_FOLDER = "Logs";
 
         internal const string LOG_FILE_NAME = "app.log";
+
+        public const string REPOSITORY_URL_ATTRIBUTE = "RepositoryUrl";
     }
 }
