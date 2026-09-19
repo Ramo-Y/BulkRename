@@ -1,7 +1,9 @@
 ﻿@using BulkRename.Constants
+@using BulkRename.Interfaces
 @using Microsoft.Extensions.Localization
 
 @inject IStringLocalizer<SharedResource> SharedLocalizer
+@inject IVersionService VersionService
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +49,7 @@
 
     <footer class="footer text-muted">
         <div class="container footer-links">
-            <a>&copy; @DateTime.Now.Year - BulkRename</a>
+            <a>&copy; @DateTime.Now.Year - BulkRename - @VersionService.GetAppVersion()</a>
             <a href="https://github.com/Ramo-Y/BulkRename">Project page</a>
             <a href="https://github.com/sponsors/Ramo-Y">&hearts; Support this project</a>
         </div>
