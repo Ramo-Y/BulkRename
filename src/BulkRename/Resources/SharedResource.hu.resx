@@ -117,8 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Névjegy</value>
+  </data>
   <data name="AnErrorOccuredHeader" xml:space="preserve">
     <value>Hiba történt a kérése feldolgozása során</value>
+  </data>
+  <data name="Author" xml:space="preserve">
+    <value>Szerző</value>
+  </data>
+  <data name="BuildDate" xml:space="preserve">
+    <value>Build dátuma</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>Commit</value>
+  </data>
+  <data name="CommitHash" xml:space="preserve">
+    <value>Commit hash</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>Szerzői jog</value>
   </data>
   <data name="DetailedErrorMessage" xml:space="preserve">
     <value>&lt;strong&gt;A fejlesztői környezetet nem szabad engedélyezni a telepített alkalmazásokhoz.&lt;/strong&gt;
@@ -141,6 +159,9 @@
   <data name="Home" xml:space="preserve">
     <value>Kezdőlap</value>
   </data>
+  <data name="InformationalVersion" xml:space="preserve">
+    <value>Információs verzió</value>
+  </data>
   <data name="LoadHistory" xml:space="preserve">
     <value>Előzmények betöltése</value>
   </data>
@@ -150,12 +171,24 @@
   <data name="OldName" xml:space="preserve">
     <value>Rági fájlnév</value>
   </data>
+  <data name="OpenCommit" xml:space="preserve">
+    <value>Commit megnyitása</value>
+  </data>
+  <data name="OpenIssues" xml:space="preserve">
+    <value>Hibajegyek megnyitása</value>
+  </data>
   <data name="PreviewRenamingOfTvShows" xml:space="preserve">
     <value>TV-műsorok átnevezése előnézet</value>
   </data>
   <data name="RenamedOn" xml:space="preserve">
-    <value>Pénteken átnevezték</value>
+    <value>Átnevezve a</value>
     <comment>Translated with deepl</comment>
+  </data>
+  <data name="ReportAProblem" xml:space="preserve">
+    <value>Probléma bejelentése</value>
+  </data>
+  <data name="Repository" xml:space="preserve">
+    <value>Repository</value>
   </data>
   <data name="Request" xml:space="preserve">
     <value>Kérés</value>
@@ -163,14 +196,26 @@
   <data name="Series" xml:space="preserve">
     <value>Sorozatok</value>
   </data>
+  <data name="SponsorPage" xml:space="preserve">
+    <value>Támogatói oldal</value>
+  </data>
   <data name="SubmitRenaming" xml:space="preserve">
     <value>Átnevezés beküldése</value>
   </data>
   <data name="SuccessfullyRenamedFiles" xml:space="preserve">
     <value>Sikeresen átnevezett fájlok</value>
   </data>
+  <data name="SupportThisProject" xml:space="preserve">
+    <value>Projekt támogatása</value>
+  </data>
+  <data name="SupportThisProjectWithHeart" xml:space="preserve">
+    <value>♥ Projekt támogatása</value>
+  </data>
   <data name="SwappingToDevelopmentModeDisplay" xml:space="preserve">
     <value>A &lt;strong&gt;Fejlesztői&lt;/strong&gt; környezetre váltás részletesebb információkat jelenít meg a bekövetkezett hibáról.</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Verzió</value>
   </data>
   <data name="WelcomeToBulkRename" xml:space="preserve">
     <value>Üdvözöl a BulkRename!</value>

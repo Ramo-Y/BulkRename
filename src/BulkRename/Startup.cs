@@ -36,6 +36,7 @@
             // INFO: Register Services
             services.AddTransient<PreparationDatabase>();
             services.AddTransient<IFileService, FileService>();
+            services.AddTransient<IVersionService, VersionService>();
             ConfigurePersistance(services);
         }
 

@@ -1,0 +1,58 @@
+﻿@using BulkRename.Constants
+@using BulkRename.ViewModels
+@using Microsoft.Extensions.Localization
+
+@model AboutViewModel
+
+@inject IStringLocalizer<SharedResource> SharedLocalizer
+
+@{
+    ViewData["Title"] = @SharedLocalizer[LocalizationConstants.ABOUT];
+}
+
+<div class="text-center">
+    <h1 class="display-4">@SharedLocalizer[LocalizationConstants.ABOUT]</h1>
+</div>
+
+<div class="container mt-4">
+    <dl class="row">
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.VERSION]</dt>
+        <dd class="col-sm-9">@Model.AppVersion</dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.INFORMATIONAL_VERSION]</dt>
+        <dd class="col-sm-9">@Model.InformationalVersion</dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.COMMIT_HASH]</dt>
+        <dd class="col-sm-9"><code>@Model.CommitHash</code>
+        </dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.COMMIT]</dt>
+        <dd class="col-sm-9">
+            <a href="@Model.CommitUrl" target="_blank" rel="noopener noreferrer">@SharedLocalizer[LocalizationConstants.OPEN_COMMIT]</a>
+        </dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.BUILD_DATE]</dt>
+        <dd class="col-sm-9">@Model.BuildDate.ToString("yyyy-MM-dd HH:mm:ss")</dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.REPOSITORY]</dt>
+        <dd class="col-sm-9">
+            <a href="@Model.RepositoryUrl" target="_blank" rel="noopener noreferrer">@SharedLocalizer[LocalizationConstants.REPOSITORY]</a>
+        </dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.SUPPORT_THIS_PROJECT]</dt>
+        <dd class="col-sm-9">
+            <a href="@Model.SupportProjectUrl" target="_blank" rel="noopener noreferrer">@SharedLocalizer[LocalizationConstants.SPONSOR_PAGE]</a>
+        </dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.REPORT_A_PROBLEM]</dt>
+        <dd class="col-sm-9">
+            <a href="@Model.IssuesUrl" target="_blank" rel="noopener noreferrer">@SharedLocalizer[LocalizationConstants.OPEN_ISSUES]</a>
+        </dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.COPYRIGHT]</dt>
+        <dd class="col-sm-9">@Model.Copyright</dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.AUTHOR]</dt>
+        <dd class="col-sm-9">@Model.Authors</dd>
+    </dl>
+</div>

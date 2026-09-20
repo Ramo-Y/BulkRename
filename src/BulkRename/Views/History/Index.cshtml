@@ -9,22 +9,18 @@
     ViewData["Title"] = SharedLocalizer[LocalizationConstants.HISTORY];
 }
 
-<!DOCTYPE html>
+<div class="text-center">
+    <h1 class="display-4">@SharedLocalizer[LocalizationConstants.HISTORY]</h1>
+    <a class="btn btn-primary" href="@Url.Action("LoadHistory", "History")">@SharedLocalizer[LocalizationConstants.LOAD_HISTORY]</a>
+</div>
 
-<head>
-    <title>@SharedLocalizer[LocalizationConstants.HISTORY]</title>
-    <meta charset="utf-8" />
-</head>
+<!DOCTYPE html>
 
 <head>
     <meta charset="utf-8" />
     <title>@SharedLocalizer[LocalizationConstants.SERIES]</title>
     <link href="~/css/customStyles.css" rel="stylesheet" />
 </head>
-
-<div class="text-start">
-    <a class="btn btn-primary" href="@Url.Action("LoadHistory", "History")">@SharedLocalizer[LocalizationConstants.LOAD_HISTORY]</a>
-</div>
 
 <br />
 
