@@ -171,6 +171,9 @@ and restarting the app.</value>
   <data name="OpenCommit" xml:space="preserve">
     <value>Open commit</value>
   </data>
+  <data name="OpenIssues" xml:space="preserve">
+    <value>Open issues</value>
+  </data>
   <data name="PreviewRenamingOfTvShows" xml:space="preserve">
     <value>Preview Renaming of TV-Shows</value>
   </data>
@@ -189,6 +192,9 @@ and restarting the app.</value>
   <data name="Series" xml:space="preserve">
     <value>Series</value>
   </data>
+  <data name="SponsorPage" xml:space="preserve">
+    <value>Sponsor page</value>
+  </data>
   <data name="SubmitRenaming" xml:space="preserve">
     <value>Submit Renaming</value>
   </data>
@@ -196,6 +202,9 @@ and restarting the app.</value>
     <value>Successfully renamed files</value>
   </data>
   <data name="SupportThisProject" xml:space="preserve">
+    <value>Support this project</value>
+  </data>
+  <data name="SupportThisProjectWithHeart" xml:space="preserve">
     <value>♥ Support this project</value>
   </data>
   <data name="SwappingToDevelopmentModeDisplay" xml:space="preserve">

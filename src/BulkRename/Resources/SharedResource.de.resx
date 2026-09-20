@@ -171,6 +171,9 @@ setzen und die Anwendung neu starten.</value>
   <data name="OpenCommit" xml:space="preserve">
     <value> Commit öffnen</value>
   </data>
+  <data name="OpenIssues" xml:space="preserve">
+    <value>Issues öffnen</value>
+  </data>
   <data name="PreviewRenamingOfTvShows" xml:space="preserve">
     <value>Vorschau für Umbenennung der Serien</value>
   </data>
@@ -189,6 +192,9 @@ setzen und die Anwendung neu starten.</value>
   <data name="Series" xml:space="preserve">
     <value>Serien</value>
   </data>
+  <data name="SponsorPage" xml:space="preserve">
+    <value>Sponsorenseite</value>
+  </data>
   <data name="SubmitRenaming" xml:space="preserve">
     <value>Umbenennen bestätigen</value>
   </data>
@@ -196,6 +202,9 @@ setzen und die Anwendung neu starten.</value>
     <value>Dateien wurden erfolgreich umbenannt</value>
   </data>
   <data name="SupportThisProject" xml:space="preserve">
+    <value>Dieses Projekt unterstützen</value>
+  </data>
+  <data name="SupportThisProjectWithHeart" xml:space="preserve">
     <value>♥ Dieses Projekt unterstützen</value>
   </data>
   <data name="SwappingToDevelopmentModeDisplay" xml:space="preserve">

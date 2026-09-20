@@ -36,6 +36,8 @@
 
         public const string OPEN_COMMIT = "OpenCommit";
 
+        public const string OPEN_ISSUES = "OpenIssues";
+
         public const string PREVIEW_RENAMING_OF_TV_SHOWS = "PreviewRenamingOfTvShows";
 
         public const string RENAMED_ON = "RenamedOn";
@@ -48,11 +50,15 @@
 
         public const string SERIES = "Series";
 
+        public const string SPONSOR_PAGE = "SponsorPage";
+
         public const string SUBMIT_RENAMING = "Submit Renaming";
 
         public const string SUCCESSFULLY_RENAMED_FILES = "SuccessfullyRenamedFiles";
 
         public const string SUPPORT_THIS_PROJECT = "SupportThisProject";
+
+        public const string SUPPORT_THIS_PROJECT_WITH_HEART = "SupportThisProjectWithHeart";
 
         public const string SWAPPING_TO_DEVELOPMENT_MODE_DISPLAY =
             "SwappingToDevelopmentModeDisplay";

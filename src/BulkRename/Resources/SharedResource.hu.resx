@@ -171,6 +171,9 @@
   <data name="OpenCommit" xml:space="preserve">
     <value>Commit megnyitása</value>
   </data>
+  <data name="OpenIssues" xml:space="preserve">
+    <value>Hibajegyek megnyitása</value>
+  </data>
   <data name="PreviewRenamingOfTvShows" xml:space="preserve">
     <value>TV-műsorok átnevezése előnézet</value>
   </data>
@@ -190,6 +193,9 @@
   <data name="Series" xml:space="preserve">
     <value>Sorozatok</value>
   </data>
+  <data name="SponsorPage" xml:space="preserve">
+    <value>Támogatói oldal</value>
+  </data>
   <data name="SubmitRenaming" xml:space="preserve">
     <value>Átnevezés beküldése</value>
   </data>
@@ -197,6 +203,9 @@
     <value>Sikeresen átnevezett fájlok</value>
   </data>
   <data name="SupportThisProject" xml:space="preserve">
+    <value>Projekt támogatása</value>
+  </data>
+  <data name="SupportThisProjectWithHeart" xml:space="preserve">
     <value>♥ Projekt támogatása</value>
   </data>
   <data name="SwappingToDevelopmentModeDisplay" xml:space="preserve">
