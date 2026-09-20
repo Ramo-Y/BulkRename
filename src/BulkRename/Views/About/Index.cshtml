@@ -10,10 +10,6 @@
     ViewData["Title"] = @SharedLocalizer[LocalizationConstants.ABOUT];
 }
 
-@{
-    var issuesUrl = $"{@Model.RepositoryUrl.TrimEnd('/')}/issues";
-}
-
 <div class="text-center">
     <h1 class="display-4">@SharedLocalizer[LocalizationConstants.ABOUT]</h1>
 </div>
@@ -33,9 +29,7 @@
 
         <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.COMMIT]</dt>
         <dd class="col-sm-9">
-            <a href="@Model.CommitUrl" target="_blank" rel="noopener noreferrer">
-                @SharedLocalizer[LocalizationConstants.OPEN_COMMIT]
-            </a>
+            <a href="@Model.CommitUrl" target="_blank" rel="noopener noreferrer">@SharedLocalizer[LocalizationConstants.OPEN_COMMIT]</a>
         </dd>
 
         <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.BUILD_DATE]</dt>
@@ -53,7 +47,7 @@
 
         <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.REPORT_A_PROBLEM]</dt>
         <dd class="col-sm-9">
-            <a href="@issuesUrl" target="_blank" rel="noopener noreferrer">@SharedLocalizer[LocalizationConstants.OPEN_ISSUES]</a>
+            <a href="@Model.IssuesUrl" target="_blank" rel="noopener noreferrer">@SharedLocalizer[LocalizationConstants.OPEN_ISSUES]</a>
         </dd>
 
         <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.COPYRIGHT]</dt>

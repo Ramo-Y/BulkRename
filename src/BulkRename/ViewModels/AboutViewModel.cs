@@ -17,5 +17,7 @@
         public string CommitUrl { get; set; } = string.Empty;
 
         public string SupportProjectUrl { get; set; } = string.Empty;
+
+        public string IssuesUrl { get; set; } = string.Empty;
     }
 }
