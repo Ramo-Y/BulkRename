@@ -1,4 +1,4 @@
-namespace BulkRename.Models
+namespace BulkRename.ViewModels
 {
     public class ErrorViewModel
     {
