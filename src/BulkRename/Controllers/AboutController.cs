@@ -1,19 +1,22 @@
 ﻿namespace BulkRename.Controllers
 {
+    using System.Reflection;
+    using BulkRename.Interfaces;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Localization;
-    using System.Reflection;
 
     public class AboutController : Controller
     {
-        private const int START_INDEX = 0;
-        private const int OFFSET = 1;
-
         private readonly IStringLocalizer<SharedResource> _sharedLocalizer;
+        private readonly IVersionService _versionService;
 
-        public AboutController(IStringLocalizer<SharedResource> sharedLocalizer)
+        public AboutController(
+            IStringLocalizer<SharedResource> sharedLocalizer,
+            IVersionService versionService
+        )
         {
             _sharedLocalizer = sharedLocalizer;
+            _versionService = versionService;
         }
 
         public IActionResult Index()
@@ -23,19 +26,8 @@
 
         public string GetCommitHash()
         {
-            var informationalVersion = GetInformationalVersion();
-            var index = informationalVersion.IndexOf('+');
-            var toDeleteCount = index + OFFSET;
-            var commitHash = informationalVersion.Remove(START_INDEX, toDeleteCount);
+            var commitHash = _versionService.GetCommitHash();
             return commitHash;
-        }
-
-        public string GetInformationalVersion()
-        {
-            var assembly = GetType().Assembly;
-            var informationalVersionAttribute = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>();
-            var informationalVersion = informationalVersionAttribute!.InformationalVersion;
-            return informationalVersion;
         }
     }
 }
