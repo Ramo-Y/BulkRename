@@ -123,6 +123,9 @@
   <data name="AnErrorOccuredHeader" xml:space="preserve">
     <value>Hiba történt a kérése feldolgozása során</value>
   </data>
+  <data name="Author" xml:space="preserve">
+    <value>Szerző</value>
+  </data>
   <data name="BuildDate" xml:space="preserve">
     <value>Build dátuma</value>
   </data>

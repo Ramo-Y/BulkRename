@@ -4,6 +4,8 @@
     {
         public string AppVersion { get; set; } = string.Empty;
 
+        public string Authors { get; set; } = string.Empty;
+
         public string InformationalVersion { get; set; } = string.Empty;
 
         public string CommitHash { get; set; } = string.Empty;

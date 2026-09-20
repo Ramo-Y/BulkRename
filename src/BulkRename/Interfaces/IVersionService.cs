@@ -4,6 +4,8 @@
     {
         string GetAppVersion();
 
+        string GetAuthors();
+
         string GetInformationalVersion();
 
         string GetCommitHash();

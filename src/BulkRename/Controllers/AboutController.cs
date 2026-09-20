@@ -21,6 +21,7 @@
             var model = new AboutViewModel
             {
                 AppVersion = _versionService.GetAppVersion(),
+                Authors = _versionService.GetAuthors(),
                 InformationalVersion = _versionService.GetInformationalVersion(),
                 CommitHash = commitHash,
                 BuildDate = _versionService.GetBuildDate(),

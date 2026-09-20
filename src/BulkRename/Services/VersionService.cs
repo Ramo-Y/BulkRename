@@ -16,6 +16,16 @@ namespace BulkRename.Services
             return version;
         }
 
+        public string GetAuthors()
+        {
+            var metadataAttributes = GetMetadataAttributes();
+            var attribute = metadataAttributes?.First(c =>
+                c.Key.Equals(EnvironmentConstants.AUTHORS_ATTRIBUTE)
+            );
+            var url = attribute?.Value ?? string.Empty;
+            return url;
+        }
+
         public string GetCommitHash()
         {
             var informationalVersion = GetInformationalVersion();

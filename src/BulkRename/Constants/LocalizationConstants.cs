@@ -6,6 +6,8 @@
 
         internal const string ABOUT = "About";
 
+        internal const string AUTHOR = "Author";
+
         internal const string BUILD_DATE = "BuildDate";
 
         internal const string COMMIT = "Commit";

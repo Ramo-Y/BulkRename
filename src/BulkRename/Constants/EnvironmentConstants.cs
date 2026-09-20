@@ -2,6 +2,8 @@
 {
     internal static class EnvironmentConstants
     {
+        internal const string AUTHORS_ATTRIBUTE = "Authors";
+
         internal const string FILES_HISTORY_FILE_NAME = "history.json";
 
         internal const string FILES_HISTORY_PATH_FOLDER_NAME = "RenamingHistory";

@@ -123,6 +123,9 @@
   <data name="AnErrorOccuredHeader" xml:space="preserve">
     <value>Fehler bei der Verarbeitung Ihrer Anforderung.</value>
   </data>
+  <data name="Author" xml:space="preserve">
+    <value>Autor</value>
+  </data>
   <data name="BuildDate" xml:space="preserve">
     <value>Build-Datum</value>
   </data>
