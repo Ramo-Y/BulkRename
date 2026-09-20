@@ -12,6 +12,8 @@
 
         string GetRepositoryUrl();
 
+        string GetSupportProjectUrl();
+
         string GetCopyright();
     }
 }

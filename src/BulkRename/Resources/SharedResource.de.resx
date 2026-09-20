@@ -192,6 +192,9 @@ setzen und die Anwendung neu starten.</value>
   <data name="SuccessfullyRenamedFiles" xml:space="preserve">
     <value>Dateien wurden erfolgreich umbenannt</value>
   </data>
+  <data name="SupportThisProject" xml:space="preserve">
+    <value>♥ Dieses Projekt unterstützen</value>
+  </data>
   <data name="SwappingToDevelopmentModeDisplay" xml:space="preserve">
     <value>Wenn Sie in die &lt;strong&gt;Entwicklungsumgebung&lt;/strong&gt; wechseln, werden detailliertere Informationen über den aufgetretenen Fehler angezeigt.</value>
   </data>

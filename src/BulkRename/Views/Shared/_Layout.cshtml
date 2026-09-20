@@ -51,7 +51,7 @@
         <div class="container footer-links">
             <a>&copy; @DateTime.Now.Year - BulkRename - @VersionService.GetAppVersion()</a>
             <a href="@VersionService.GetRepositoryUrl()">Project page</a>
-            <a href="https://github.com/sponsors/Ramo-Y">&hearts; Support this project</a>
+            <a href="@VersionService.GetSupportProjectUrl()">@SharedLocalizer[LocalizationConstants.SUPPORT_THIS_PROJECT]</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

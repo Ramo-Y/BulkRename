@@ -192,6 +192,9 @@ and restarting the app.</value>
   <data name="SuccessfullyRenamedFiles" xml:space="preserve">
     <value>Successfully renamed files</value>
   </data>
+  <data name="SupportThisProject" xml:space="preserve">
+    <value>♥ Support this project</value>
+  </data>
   <data name="SwappingToDevelopmentModeDisplay" xml:space="preserve">
     <value>Swapping to &lt;strong&gt;Development&lt;/strong&gt; environment will display more detailed information about the error that occurred.</value>
   </data>

@@ -193,6 +193,9 @@
   <data name="SuccessfullyRenamedFiles" xml:space="preserve">
     <value>Sikeresen átnevezett fájlok</value>
   </data>
+  <data name="SupportThisProject" xml:space="preserve">
+    <value>♥ Projekt támogatása</value>
+  </data>
   <data name="SwappingToDevelopmentModeDisplay" xml:space="preserve">
     <value>A &lt;strong&gt;Fejlesztői&lt;/strong&gt; környezetre váltás részletesebb információkat jelenít meg a bekövetkezett hibáról.</value>
   </data>

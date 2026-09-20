@@ -10,6 +10,10 @@
     ViewData["Title"] = @SharedLocalizer[LocalizationConstants.ABOUT];
 }
 
+@{
+    var issuesUrl = $"{@Model.RepositoryUrl.TrimEnd('/')}/issues";
+}
+
 <div class="text-center">
     <h1 class="display-4">@SharedLocalizer[LocalizationConstants.ABOUT]</h1>
 </div>
@@ -40,6 +44,11 @@
         <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.REPOSITORY]</dt>
         <dd class="col-sm-9">
             <a href="@Model.RepositoryUrl" target="_blank" rel="noopener noreferrer">@Model.RepositoryUrl</a>
+        </dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.SUPPORT_THIS_PROJECT]</dt>
+        <dd class="col-sm-9">
+            <a href="@Model.SupportProjectUrl" target="_blank" rel="noopener noreferrer">@Model.SupportProjectUrl</a>
         </dd>
 
         <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.COPYRIGHT]</dt>

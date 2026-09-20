@@ -50,6 +50,8 @@
 
         public const string SUCCESSFULLY_RENAMED_FILES = "SuccessfullyRenamedFiles";
 
+        public const string SUPPORT_THIS_PROJECT = "SupportThisProject";
+
         public const string SWAPPING_TO_DEVELOPMENT_MODE_DISPLAY =
             "SwappingToDevelopmentModeDisplay";
 

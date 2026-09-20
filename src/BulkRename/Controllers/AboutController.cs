@@ -27,6 +27,7 @@
                 RepositoryUrl = repositoryUrl,
                 Copyright = _versionService.GetCopyright(),
                 CommitUrl = $"{repositoryUrl.TrimEnd('/')}/commit/{commitHash}",
+                SupportProjectUrl = _versionService.GetSupportProjectUrl(),
             };
 
             return View(model);

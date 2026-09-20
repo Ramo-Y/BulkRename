@@ -1,6 +1,6 @@
-﻿using BulkRename.Constants;
+﻿using System.Reflection;
+using BulkRename.Constants;
 using BulkRename.Interfaces;
-using System.Reflection;
 
 namespace BulkRename.Services
 {
@@ -11,7 +11,8 @@ namespace BulkRename.Services
         public string GetAppVersion()
         {
             var assemblyVersion = GetType().Assembly.GetName().Version!;
-            var version = $"V{assemblyVersion.Major}.{assemblyVersion.Minor}.{assemblyVersion.Build}";
+            var version =
+                $"V{assemblyVersion.Major}.{assemblyVersion.Minor}.{assemblyVersion.Build}";
             return version;
         }
 
@@ -27,7 +28,8 @@ namespace BulkRename.Services
         public string GetInformationalVersion()
         {
             var assembly = GetType().Assembly;
-            var informationalVersionAttribute = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>();
+            var informationalVersionAttribute =
+                assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>();
             var informationalVersion = informationalVersionAttribute!.InformationalVersion;
             return informationalVersion;
         }
@@ -37,17 +39,32 @@ namespace BulkRename.Services
             var metadataAttributes = GetMetadataAttributes();
             var attribute = metadataAttributes?.First(c => c.Key.Equals("BuildDate"));
             var dateString = attribute?.Value ?? string.Empty;
-            DateTime.TryParseExact(dateString, "yyyyMMddHHmmss",
-                                   System.Globalization.CultureInfo.InvariantCulture,
-                                   System.Globalization.DateTimeStyles.None,
-                                   out var dateTime);
+            DateTime.TryParseExact(
+                dateString,
+                "yyyyMMddHHmmss",
+                System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.None,
+                out var dateTime
+            );
             return dateTime;
         }
 
         public string GetRepositoryUrl()
         {
             var metadataAttributes = GetMetadataAttributes();
-            var attribute = metadataAttributes?.First(c => c.Key.Equals(EnvironmentConstants.REPOSITORY_URL_ATTRIBUTE));
+            var attribute = metadataAttributes?.First(c =>
+                c.Key.Equals(EnvironmentConstants.REPOSITORY_URL_ATTRIBUTE)
+            );
+            var url = attribute?.Value ?? string.Empty;
+            return url;
+        }
+
+        public string GetSupportProjectUrl()
+        {
+            var metadataAttributes = GetMetadataAttributes();
+            var attribute = metadataAttributes?.First(c =>
+                c.Key.Equals(EnvironmentConstants.SUPPORT_PROJECT_URL_ATTRIBUTE)
+            );
             var url = attribute?.Value ?? string.Empty;
             return url;
         }
