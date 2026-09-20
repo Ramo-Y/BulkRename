@@ -12,8 +12,8 @@
 
         internal const string LOG_FILE_NAME = "app.log";
 
-        public const string REPOSITORY_URL_ATTRIBUTE = "RepositoryUrl";
+        internal const string REPOSITORY_URL_ATTRIBUTE = "RepositoryUrl";
 
-        public const string SUPPORT_PROJECT_URL_ATTRIBUTE = "SupportProjectUrl";
+        internal const string SUPPORT_PROJECT_URL_ATTRIBUTE = "SupportProjectUrl";
     }
 }
