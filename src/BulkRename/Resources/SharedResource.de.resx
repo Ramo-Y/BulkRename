@@ -123,6 +123,18 @@
   <data name="AnErrorOccuredHeader" xml:space="preserve">
     <value>Fehler bei der Verarbeitung Ihrer Anforderung.</value>
   </data>
+  <data name="BuildDate" xml:space="preserve">
+    <value>Build-Datum</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>Commit</value>
+  </data>
+  <data name="CommitHash" xml:space="preserve">
+    <value>Commit-Hash</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
   <data name="DetailedErrorMessage" xml:space="preserve">
     <value>&lt;strong&gt;Die Entwicklungsumgebung sollte für bereitgestellte Anwendungen nicht aktiviert werden.&lt;/strong&gt;
 Sie kann dazu führen, dass sensible Informationen aus Ausnahmen für Endbenutzer angezeigt werden.
@@ -144,6 +156,9 @@ setzen und die Anwendung neu starten.</value>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="InformationalVersion" xml:space="preserve">
+    <value>Informationsversion</value>
+  </data>
   <data name="LoadHistory" xml:space="preserve">
     <value>Verlauf laden</value>
   </data>
@@ -153,11 +168,17 @@ setzen und die Anwendung neu starten.</value>
   <data name="OldName" xml:space="preserve">
     <value>Alter Name</value>
   </data>
+  <data name="OpenCommit" xml:space="preserve">
+    <value> Commit öffnen</value>
+  </data>
   <data name="PreviewRenamingOfTvShows" xml:space="preserve">
     <value>Vorschau für Umbenennung der Serien</value>
   </data>
   <data name="RenamedOn" xml:space="preserve">
     <value>Umbenannt am</value>
+  </data>
+  <data name="Repository" xml:space="preserve">
+    <value>Repository</value>
   </data>
   <data name="Request" xml:space="preserve">
     <value>Anfrage</value>
@@ -173,6 +194,9 @@ setzen und die Anwendung neu starten.</value>
   </data>
   <data name="SwappingToDevelopmentModeDisplay" xml:space="preserve">
     <value>Wenn Sie in die &lt;strong&gt;Entwicklungsumgebung&lt;/strong&gt; wechseln, werden detailliertere Informationen über den aufgetretenen Fehler angezeigt.</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
   </data>
   <data name="WelcomeToBulkRename" xml:space="preserve">
     <value>Willkommen bei BulkRename!</value>

@@ -1,33 +1,35 @@
 ﻿namespace BulkRename.Controllers
 {
-    using System.Reflection;
     using BulkRename.Interfaces;
+    using BulkRename.ViewModels;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Extensions.Localization;
 
     public class AboutController : Controller
     {
-        private readonly IStringLocalizer<SharedResource> _sharedLocalizer;
         private readonly IVersionService _versionService;
 
-        public AboutController(
-            IStringLocalizer<SharedResource> sharedLocalizer,
-            IVersionService versionService
-        )
+        public AboutController(IVersionService versionService)
         {
-            _sharedLocalizer = sharedLocalizer;
             _versionService = versionService;
         }
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public string GetCommitHash()
-        {
+            var repositoryUrl = _versionService.GetRepositoryUrl();
             var commitHash = _versionService.GetCommitHash();
-            return commitHash;
+
+            var model = new AboutViewModel
+            {
+                AppVersion = _versionService.GetAppVersion(),
+                InformationalVersion = _versionService.GetInformationalVersion(),
+                CommitHash = commitHash,
+                BuildDate = _versionService.GetBuildDate(),
+                RepositoryUrl = repositoryUrl,
+                Copyright = _versionService.GetCopyright(),
+                CommitUrl = $"{repositoryUrl.TrimEnd('/')}/commit/{commitHash}",
+            };
+
+            return View(model);
         }
     }
 }

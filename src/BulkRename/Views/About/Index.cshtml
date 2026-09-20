@@ -1,5 +1,8 @@
 ﻿@using BulkRename.Constants
+@using BulkRename.ViewModels
 @using Microsoft.Extensions.Localization
+
+@model AboutViewModel
 
 @inject IStringLocalizer<SharedResource> SharedLocalizer
 
@@ -7,13 +10,39 @@
     ViewData["Title"] = @SharedLocalizer[LocalizationConstants.ABOUT];
 }
 
-<head>
-    <title>@SharedLocalizer[LocalizationConstants.ABOUT]</title>
-    <meta charset="utf-8"/>
-</head>
-
 <div class="text-center">
     <h1 class="display-4">@SharedLocalizer[LocalizationConstants.ABOUT]</h1>
 </div>
 
-@* TODO: Add project page, version commit etc. *@
+<div class="container mt-4">
+    <dl class="row">
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.VERSION]</dt>
+        <dd class="col-sm-9">@Model.AppVersion</dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.INFORMATIONAL_VERSION]</dt>
+        <dd class="col-sm-9">@Model.InformationalVersion</dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.COMMIT_HASH]</dt>
+        <dd class="col-sm-9">
+            <code>@Model.CommitHash</code>
+        </dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.COMMIT]</dt>
+        <dd class="col-sm-9">
+            <a href="@Model.CommitUrl" target="_blank" rel="noopener noreferrer">
+                @SharedLocalizer[LocalizationConstants.OPEN_COMMIT]
+            </a>
+        </dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.BUILD_DATE]</dt>
+        <dd class="col-sm-9">@Model.BuildDate.ToString("yyyy-MM-dd HH:mm:ss")</dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.REPOSITORY]</dt>
+        <dd class="col-sm-9">
+            <a href="@Model.RepositoryUrl" target="_blank" rel="noopener noreferrer">@Model.RepositoryUrl</a>
+        </dd>
+
+        <dt class="col-sm-3">@SharedLocalizer[LocalizationConstants.COPYRIGHT]</dt>
+        <dd class="col-sm-9">@Model.Copyright</dd>
+    </dl>
+</div>
