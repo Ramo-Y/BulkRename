@@ -177,6 +177,9 @@ setzen und die Anwendung neu starten.</value>
   <data name="RenamedOn" xml:space="preserve">
     <value>Umbenannt am</value>
   </data>
+  <data name="ReportAProblem" xml:space="preserve">
+    <value>Problem melden</value>
+  </data>
   <data name="Repository" xml:space="preserve">
     <value>Repository</value>
   </data>

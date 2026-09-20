@@ -177,6 +177,9 @@ and restarting the app.</value>
   <data name="RenamedOn" xml:space="preserve">
     <value>Renamed on</value>
   </data>
+  <data name="ReportAProblem" xml:space="preserve">
+    <value>Report a problem</value>
+  </data>
   <data name="Repository" xml:space="preserve">
     <value>Repository</value>
   </data>

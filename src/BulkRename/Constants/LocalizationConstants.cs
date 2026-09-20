@@ -40,6 +40,8 @@
 
         public const string RENAMED_ON = "RenamedOn";
 
+        public const string REPORT_A_PROBLEM = "ReportAProblem";
+
         public const string REPOSITORY = "Repository";
 
         public const string REQUEST = "Request";

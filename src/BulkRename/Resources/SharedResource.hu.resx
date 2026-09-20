@@ -178,6 +178,9 @@
     <value>Átnevezve a</value>
     <comment>Translated with deepl</comment>
   </data>
+  <data name="ReportAProblem" xml:space="preserve">
+    <value>Probléma bejelentése</value>
+  </data>
   <data name="Repository" xml:space="preserve">
     <value>Repository</value>
   </data>
