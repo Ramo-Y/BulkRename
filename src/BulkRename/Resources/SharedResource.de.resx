@@ -169,7 +169,7 @@ setzen und die Anwendung neu starten.</value>
     <value>Alter Name</value>
   </data>
   <data name="OpenCommit" xml:space="preserve">
-    <value> Commit öffnen</value>
+    <value>Commit öffnen</value>
   </data>
   <data name="OpenIssues" xml:space="preserve">
     <value>Issues öffnen</value>
