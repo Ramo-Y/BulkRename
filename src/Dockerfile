@@ -1,8 +1,9 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 
 ARG BUILDCONFIG=Release
-ARG VERSION=1.0.0.0
+ARG GIT_COMMIT=unknown
 
+ENV GIT_COMMIT=$GIT_COMMIT
 WORKDIR /src
 
 COPY ./Directory.Build.props ./
@@ -18,7 +19,7 @@ WORKDIR /src/BulkRename
 RUN dotnet publish ./BulkRename.csproj \
     -c ${BUILDCONFIG} \
     -o /app/out \
-    /p:Version=${VERSION} \
+    /p:GitCommit=$GIT_COMMIT \
     /p:UseAppHost=false \
     --no-restore
 
