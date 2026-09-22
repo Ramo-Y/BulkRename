@@ -29,6 +29,20 @@ namespace BulkRename.Services
 
         public string GetCommitHash()
         {
+            var metadataAttributes = GetMetadataAttributes();
+            var attribute = metadataAttributes?.First(c => c.Key.Equals("GitCommit"));
+            var commitHash = attribute?.Value;
+
+            if (string.IsNullOrWhiteSpace(commitHash))
+            {
+                commitHash = GetFallbackCommitHash();
+            }
+
+            return commitHash;
+        }
+
+        private string GetFallbackCommitHash()
+        {
             var informationalVersion = GetInformationalVersion();
             var index = informationalVersion.IndexOf('+');
             var toDeleteCount = index + OFFSET;
