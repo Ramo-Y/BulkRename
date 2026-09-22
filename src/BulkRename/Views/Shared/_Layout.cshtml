@@ -1,7 +1,9 @@
 ﻿@using BulkRename.Constants
+@using BulkRename.Interfaces
 @using Microsoft.Extensions.Localization
 
 @inject IStringLocalizer<SharedResource> SharedLocalizer
+@inject IVersionService VersionService
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +33,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="History" asp-action="Index">@SharedLocalizer[LocalizationConstants.HISTORY]</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="Index">@SharedLocalizer[LocalizationConstants.ABOUT]</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -44,9 +49,9 @@
 
     <footer class="footer text-muted">
         <div class="container footer-links">
-            <a>&copy; @DateTime.Now.Year - BulkRename</a>
-            <a href="https://github.com/Ramo-Y/BulkRename">Project page</a>
-            <a href="https://github.com/sponsors/Ramo-Y">&hearts; Support this project</a>
+            <a>&copy; @DateTime.Now.Year - BulkRename - @VersionService.GetAppVersion()</a>
+            <a href="@VersionService.GetRepositoryUrl()">Project page</a>
+            <a href="@VersionService.GetSupportProjectUrl()">@SharedLocalizer[LocalizationConstants.SUPPORT_THIS_PROJECT_WITH_HEART]</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

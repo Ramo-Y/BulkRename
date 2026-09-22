@@ -1,9 +1,7 @@
 ﻿namespace BulkRename.Controllers
 {
     using System.Diagnostics;
-
-    using BulkRename.Models;
-
+    using BulkRename.ViewModels;
     using Microsoft.AspNetCore.Diagnostics;
     using Microsoft.AspNetCore.Mvc;
 
@@ -28,9 +26,10 @@
             _logger.LogError(exception, "Something went wrong!");
             return View(
                 new ErrorViewModel
-                    {
-                        RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
-                    });
+                {
+                    RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
+                }
+            );
         }
     }
 }
