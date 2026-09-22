@@ -33,6 +33,7 @@ jobs:
         file: ./src/Dockerfile
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ vars.IMAGE_NAME }}:${{ inputs.image_version }}
         outputs: type=docker,dest=/tmp/${{ vars.IMAGE_NAME }}.tar
+        build-args: GIT_COMMIT=${{ github.sha }}
     - name: Upload artifact
       uses: actions/upload-artifact@v6
       with:

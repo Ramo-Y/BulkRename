@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Globalization;
+using System.Reflection;
 using BulkRename.Constants;
 using BulkRename.Interfaces;
 
@@ -18,15 +19,25 @@ namespace BulkRename.Services
 
         public string GetAuthors()
         {
-            var metadataAttributes = GetMetadataAttributes();
-            var attribute = metadataAttributes?.First(c =>
-                c.Key.Equals(EnvironmentConstants.AUTHORS_ATTRIBUTE)
-            );
+            var attribute = GetMetadataAttribute(AttributeConstants.AUTHORS_ATTRIBUTE);
             var url = attribute?.Value ?? string.Empty;
             return url;
         }
 
         public string GetCommitHash()
+        {
+            var attribute = GetMetadataAttribute(AttributeConstants.GIT_COMMIT_ATTRIBUTE);
+            var commitHash = attribute?.Value;
+
+            if (string.IsNullOrWhiteSpace(commitHash))
+            {
+                commitHash = GetFallbackCommitHash();
+            }
+
+            return commitHash;
+        }
+
+        private string GetFallbackCommitHash()
         {
             var informationalVersion = GetInformationalVersion();
             var index = informationalVersion.IndexOf('+');
@@ -46,14 +57,13 @@ namespace BulkRename.Services
 
         public DateTime GetBuildDate()
         {
-            var metadataAttributes = GetMetadataAttributes();
-            var attribute = metadataAttributes?.First(c => c.Key.Equals("BuildDate"));
+            var attribute = GetMetadataAttribute(AttributeConstants.BUILD_DATE_ATTRIBUTE);
             var dateString = attribute?.Value ?? string.Empty;
             DateTime.TryParseExact(
                 dateString,
                 "yyyyMMddHHmmss",
-                System.Globalization.CultureInfo.InvariantCulture,
-                System.Globalization.DateTimeStyles.None,
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
                 out var dateTime
             );
             return dateTime;
@@ -61,20 +71,14 @@ namespace BulkRename.Services
 
         public string GetRepositoryUrl()
         {
-            var metadataAttributes = GetMetadataAttributes();
-            var attribute = metadataAttributes?.First(c =>
-                c.Key.Equals(EnvironmentConstants.REPOSITORY_URL_ATTRIBUTE)
-            );
+            var attribute = GetMetadataAttribute(AttributeConstants.REPOSITORY_URL_ATTRIBUTE);
             var url = attribute?.Value ?? string.Empty;
             return url;
         }
 
         public string GetSupportProjectUrl()
         {
-            var metadataAttributes = GetMetadataAttributes();
-            var attribute = metadataAttributes?.First(c =>
-                c.Key.Equals(EnvironmentConstants.SUPPORT_PROJECT_URL_ATTRIBUTE)
-            );
+            var attribute = GetMetadataAttribute(AttributeConstants.SUPPORT_PROJECT_URL_ATTRIBUTE);
             var url = attribute?.Value ?? string.Empty;
             return url;
         }
@@ -87,11 +91,16 @@ namespace BulkRename.Services
             return copyright;
         }
 
-        private IEnumerable<AssemblyMetadataAttribute> GetMetadataAttributes()
+        private AssemblyMetadataAttribute? GetMetadataAttribute(string attributeName)
         {
             var assembly = GetType().Assembly;
             var metadataAttributes = assembly.GetCustomAttributes<AssemblyMetadataAttribute>();
-            return metadataAttributes;
+            var attribute = metadataAttributes?.First(c =>
+                c.Key.Equals(attributeName)
+            );
+
+            return attribute;
+
         }
     }
 }
