@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Globalization;
+using System.Reflection;
 using BulkRename.Constants;
 using BulkRename.Interfaces;
 
@@ -52,8 +53,8 @@ namespace BulkRename.Services
             DateTime.TryParseExact(
                 dateString,
                 "yyyyMMddHHmmss",
-                System.Globalization.CultureInfo.InvariantCulture,
-                System.Globalization.DateTimeStyles.None,
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
                 out var dateTime
             );
             return dateTime;
