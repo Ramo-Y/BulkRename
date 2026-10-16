@@ -26,11 +26,11 @@
 .PARAMETER BulkRenamePort
 	Port of the bulkrename application, default is '8383'
 .PARAMETER BulkRenameFolder
-	Folder outside docker that will be mapped to use for the files to rename, default is 'D:\\BulkRename\\Files'
+	Folder outside docker that will be mapped to use for the files to rename, default is 'D:/BulkRename/Files'
 .PARAMETER LogFolder
-	Folder where logs will be stored if seq is not configured, default is 'D:\\BulkRename\\Logs'
+	Folder where logs will be stored if seq is not configured, default is 'D:/BulkRename/Logs'
 .PARAMETER HistoryFolder
-	The history file folder if you decide to use the file history instead of database, default is 'D:\\BulkRename\\RenamingHistory'
+	The history file folder if you decide to use the file history instead of database, default is 'D:/BulkRename/RenamingHistory'
 .PARAMETER SupportedFileEndings
 	File endings that are used for videos or the files you want to rename, default is 'mkv;mp4;m4v;avi'
 .PARAMETER FoldersToIgnore
@@ -50,9 +50,9 @@ Param (
 	[Parameter(Mandatory = $false)][string]$SeqUrl,
 	[Parameter(Mandatory = $false)][string]$SeqApiKey,
 	[Parameter(Mandatory = $false)][string]$BulkRenamePort = "8383",
-	[Parameter(Mandatory = $false)][string]$BulkRenameFolder = "D:\\BulkRename\\Files",
-	[Parameter(Mandatory = $false)][string]$LogFolder = "D:\\BulkRename\\Logs",
-	[Parameter(Mandatory = $false)][string]$HistoryFolder = "D:\\BulkRename\\RenamingHistory",
+	[Parameter(Mandatory = $false)][string]$BulkRenameFolder = "D:/BulkRename/Files",
+	[Parameter(Mandatory = $false)][string]$LogFolder = "D:/BulkRename/Logs",
+	[Parameter(Mandatory = $false)][string]$HistoryFolder = "D:/BulkRename/RenamingHistory",
 	[Parameter(Mandatory = $false)][string]$SupportedFileEndings = "mkv;mp4;m4v;avi",
 	[Parameter(Mandatory = $false)][string]$FoldersToIgnore = ".@__thumb"
 )
