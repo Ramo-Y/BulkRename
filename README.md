@@ -51,7 +51,6 @@ Please use the following `docker-compose.yml` file and replace the values with y
 ### Basic installation without history saving and SEQ
 
 ```yaml
-version: '3.7'
 services:
   bulkrename:
     image: ramoy/bulkrename:latest
@@ -72,7 +71,6 @@ services:
 If you want to keep your renaming history, you can do this with a JSON file or database (see also [PersistanceMode](#PersistanceMode)), in this example a SQL Server is used:
 
 ```yaml
-version: '3.7'
 services:
   ms-sql-server:
     image: mcr.microsoft.com/mssql/server:2022-latest
