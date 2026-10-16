@@ -63,8 +63,12 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - "/share/Downloads/Files://app//Files//" # folder in which your TV show files must be located at the time of renaming
-      - "/share/Downloads/Logs://app//Logs//" # optional to have logs available outside docker
+      - type: bind
+        source: "${BULK_RENAME_FOLDER}" # folder in which your TV show files must be located at the time of renaming
+        target: /app/Files
+      - type: bind
+        source: "${LOG_FOLDER}" # optional to have logs available outside docker
+        target: /app/Logs
 ```
 
 ### With SQL Server as a docker container
@@ -83,7 +87,9 @@ services:
     ports:
       - "1433:1433"
     volumes:
-      - "/share/Downloads/BulkRename/Data:/var/opt/mssql"
+      - type: bind
+        source: "/share/Downloads/BulkRename/Data"
+        target: /var/opt/mssql
   bulkrename:
     depends_on:
       - "ms-sql-server"
@@ -106,7 +112,9 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - "/share/Downloads/Files://app//Files//" # folder in which your TV show files must be located at the time of renaming
+      - type: bind
+        source: "${BULK_RENAME_FOLDER}" # folder in which your TV show files must be located at the time of renaming
+        target: /app/Files
 ```
 
 ### Environment variables

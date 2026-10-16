@@ -31,9 +31,15 @@ services:
     ports:
       - "${BULK_RENAME_PORT}:8080"
     volumes:
-      - "${BULK_RENAME_FOLDER}://app//Files//"
-      - "${LOG_FOLDER}://app//Logs//"
-      - "${HISTORY_FOLDER}://app//RenamingHistory//"
+      - type: bind
+        source: "${BULK_RENAME_FOLDER}"
+        target: /app/Files
+      - type: bind
+        source: "${LOG_FOLDER}"
+        target: /app/Logs
+      - type: bind
+        source: "${HISTORY_FOLDER}"
+        target: /app/RenamingHistory
     healthcheck:
       test: wget -qO - http://localhost:8080/healthz/ || exit 1
       interval: 10s
